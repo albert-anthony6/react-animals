@@ -1,0 +1,31 @@
+.app-header {
+    display: flex;
+    padding: 20px 37px;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    
+    ul {
+        display: flex;
+        align-items: center;
+        margin-right: 200px;
+        
+        li {
+            font-size: rem(14);
+            font-weight: bold;
+            padding: 0 10px;
+            margin: 0 10px;
+        }
+    }
+
+    .dropdown {
+        position: fixed;
+        top: 40px;
+        right: 50px;
+        padding: 8px 18px;
+        border: 1px solid $lightest-neutral;
+        border-radius: 50px;
+        margin-left: 18px;
+    }
+}
