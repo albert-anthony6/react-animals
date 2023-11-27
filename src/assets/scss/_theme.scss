@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: #BB4A26;
+}
+
 html,
 body {
     font-family: $primary-font-stack;
@@ -14,7 +18,7 @@ body {
 }
 
 body {
-    background-color: $darkest-neutral;
+    background-color: #C75A4F;
     background-size: cover;
     cursor: default;
 }
@@ -25,7 +29,7 @@ p {
 
 a {
     text-decoration: none;
-    color: inherit
+    color: inherit;
 }
 
 h1 {

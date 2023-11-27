@@ -5,6 +5,10 @@
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+
+    .logo {
+        line-height: 0;
+    }
     
     ul {
         display: flex;
@@ -12,10 +16,61 @@
         margin-right: 200px;
         
         li {
+            position: relative;
             font-size: rem(14);
             font-weight: bold;
             padding: 0 10px;
             margin: 0 10px;
+            background: linear-gradient( to left, transparent 50%, #4884a2 50% );
+            transition: all 0.3s ease;
+            background-size: 200% 100%;
+            background-position: right bottom;
+
+            &:hover {
+                background-position: left bottom;
+
+                & .ul-child {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .submenu:hover {
+                & .ul-child--nested {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .ul-child,
+            .ul-child--nested {
+                position: absolute;
+                display: block;
+                min-width: 180px;
+                padding: 10px 0 20px;
+                top: 40px;
+                left: 0;
+                background-color: $lightest-neutral;
+                color: #4884a2;
+                transition: all 0.2s ease;
+                opacity: 0;
+                visibility: hidden;
+
+                li {
+                    margin-top: 10px;
+
+                    &:hover {
+                        color: $lightest-neutral;
+                    }
+                }
+
+                &--nested {
+                    position: absolute;
+                    min-width: 220px;
+                    top: -20px;
+                    left: 160px;
+                }
+            }
         }
     }
 
