@@ -8,6 +8,12 @@
 
     .logo {
         line-height: 0;
+        transition: transform 0.3s ease;
+        z-index: 999;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
     
     ul {
@@ -74,13 +80,26 @@
         }
     }
 
-    .dropdown {
+    .modal-button {
         position: fixed;
         top: 40px;
         right: 50px;
         padding: 8px 18px;
-        border: 1px solid $lightest-neutral;
-        border-radius: 50px;
+        border: 2px solid $lightest-neutral;
+        border-radius: 20px;
         margin-left: 18px;
+        cursor: pointer;
+        z-index: 999;
+
+        svg {
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+    }
+
+    .active-modal {
+        svg {
+            transform: rotate(180deg);
+        }
     }
 }

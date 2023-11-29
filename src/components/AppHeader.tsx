@@ -1,12 +1,19 @@
 import './AppHeader.scss';
-import ZooLogo from '../assets/icons/zoo_logo.svg?react';
 import { Link } from 'react-router-dom';
+import ZooLogo from '../assets/icons/zoo_logo.svg?react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-function AppHeader() {
+type Props = {
+  activeModal: boolean;
+  setActiveModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function AppHeader({ activeModal, setActiveModal }: Props) {
   return (
     <nav className="app-header">
       <Link to="/" className="logo">
-        <ZooLogo />
+        <ZooLogo onClick={() => setActiveModal(false)} />
       </Link>
       <ul className="ul-child">
         <li>
@@ -76,9 +83,10 @@ function AppHeader() {
             <li>Volunteer</li>
           </ul>
         </li>
-        <li>
-          <div className="dropdown">
+        <li onClick={() => setActiveModal(!activeModal)}>
+          <div className={activeModal ? "modal-button active-modal" : "modal-button"}>
             Plan Your Adventure
+            <FontAwesomeIcon icon={faChevronDown} />
           </div>
         </li>
       </ul>
