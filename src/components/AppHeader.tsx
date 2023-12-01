@@ -1,6 +1,6 @@
 import './AppHeader.scss';
 import { Link } from 'react-router-dom';
-import ZooLogo from '../assets/icons/zoo_logo.svg?react';
+import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,7 +13,7 @@ function AppHeader({ activeModal, setActiveModal }: Props) {
   return (
     <header className="app-header">
       <Link to="/" className="logo">
-        <ZooLogo onClick={() => setActiveModal(false)} />
+        <IconZooLogo onClick={() => setActiveModal(false)} />
       </Link>
       <nav>
         <ul className="ul-child">

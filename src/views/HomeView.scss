@@ -1,31 +1,76 @@
 .home-view {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 100px);
+    position: relative;
+
     .hero-banner {
-        margin: 240px 0 0 80px;
+        padding: 315px 0 0 30px;
+
+        @include bp-md-tablet {
+            padding-left: 80px;
+        }
 
         .hero-text {
-            text-align: center;
+            font-size: rem(3.5);
+            text-align: left;
             width: fit-content;
+            
+            @include bp-xs-phone {
+                font-size: rem(4.5);
+            }
+            
+            @include bp-sm-phone-landscape {
+                font-size: rem(6);
+            }
+            
+            @include bp-md-tablet {
+                font-size: rem(8);
+            }
+            
+            @include bp-xl-desktop {
+                font-size: rem(10);
+                text-align: center;
+            }
 
             h4 {
-                @include font-size(30, bold, uppercase, -0.5, 30);
+                @include font-size(35, bold, uppercase, -0.5, 30);
+                font-size: em(40, 10);
                 color: #7eb12c;
+
+                @include bp-xs-phone {
+                    font-size: em(35, 10);
+                }
+                
+                @include bp-md-tablet {
+                    font-size: em(30, 10);
+                }
             }
         
             h1 {
-                @include font-size(200, bold, uppercase, -2.5, 180);
-                font-size: rem(200);
+                @include font-size(200, bold, uppercase, -2.5, 70);
+                font-size: em(200, 10);
                 font-family: $secondary-font-stack;
+
+                @include bp-sm-phone-landscape {
+                    line-height: 100px;
+                }
+
+                @include bp-md-tablet {
+                    line-height: 130px;
+                }
+
+                @include bp-xl-desktop {
+                    line-height: 180px;
+                }
             }
         }
     
         .bg-video {
             position: absolute;
-            top: 0;
+            top: -40px;
             left: 0;
             z-index: -1;
             width: 100%;
-            height: 100%;
+            height: calc(100% + 40px);
 
             &::after {
                 content: "";
@@ -43,6 +88,29 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+        }
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        bottom: -60px;
+        left: 0;
+        background-image: linear-gradient(0deg, rgba(99, 109, 141, 0) 0%, #636d8d 100%);
+
+        svg {
+            position: absolute;
+            width: 150px;
+            top: -42px;
+            left: 14.5%;
+            height: 100%;
+            fill: #636d8d;
+
+            &:last-of-type {
+                transform: scale(0.3);
+                margin-top: 3px;
             }
         }
     }
