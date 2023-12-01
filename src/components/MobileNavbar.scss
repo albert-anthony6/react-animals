@@ -1,0 +1,23 @@
+.mobile-navbar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    background-color: #0a415d;
+    
+    .navbar-btn {
+        @include font-size(14, bold, capitalize, normal, 20);
+        cursor: pointer;
+
+        svg {
+            font-size: rem(16);
+            color: #7eb104;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+    }
+}
