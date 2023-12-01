@@ -21,6 +21,10 @@ body {
     background-color: #C75A4F;
     background-size: cover;
     cursor: default;
+
+    &:has(.menu-modal) {
+        overflow: hidden;
+    }
 }
 
 p {

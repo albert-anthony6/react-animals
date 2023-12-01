@@ -1,12 +1,11 @@
 .app-header {
-    display: flex;
     padding: 20px 37px;
     background-color: transparent;
-    justify-content: space-between;
-    align-items: center;
     text-transform: uppercase;
 
     .logo {
+        position: fixed;
+        top: 20px;
         line-height: 0;
         transition: transform 0.3s ease;
         z-index: 999;
@@ -15,91 +14,98 @@
             transform: scale(1.1);
         }
     }
+
+    nav {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 49%;
+
+        ul {
+            display: flex;
+            align-items: center;
+            margin-right: 200px;
+            
+            li {
+                position: relative;
+                font-size: rem(14);
+                font-weight: bold;
+                padding: 0 10px;
+                margin: 0 10px;
+                background: linear-gradient( to left, transparent 50%, #4884a2 50% );
+                transition: all 0.3s ease;
+                background-size: 200% 100%;
+                background-position: right bottom;
     
-    ul {
-        display: flex;
-        align-items: center;
-        margin-right: 200px;
-        
-        li {
-            position: relative;
-            font-size: rem(14);
-            font-weight: bold;
-            padding: 0 10px;
-            margin: 0 10px;
-            background: linear-gradient( to left, transparent 50%, #4884a2 50% );
-            transition: all 0.3s ease;
-            background-size: 200% 100%;
-            background-position: right bottom;
-
-            &:hover {
-                background-position: left bottom;
-
-                & .ul-child {
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
-
-            .submenu:hover {
-                & .ul-child--nested {
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
-
-            .ul-child,
-            .ul-child--nested {
-                position: absolute;
-                display: block;
-                min-width: 180px;
-                padding: 10px 0 20px;
-                top: 40px;
-                left: 0;
-                background-color: $lightest-neutral;
-                color: #4884a2;
-                transition: all 0.2s ease;
-                opacity: 0;
-                visibility: hidden;
-
-                li {
-                    margin-top: 10px;
-
-                    &:hover {
-                        color: $lightest-neutral;
+                &:hover {
+                    background-position: left bottom;
+    
+                    & .ul-child {
+                        visibility: visible;
+                        opacity: 1;
                     }
                 }
-
-                &--nested {
+    
+                .submenu:hover {
+                    & .ul-child--nested {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+    
+                .ul-child,
+                .ul-child--nested {
                     position: absolute;
-                    min-width: 220px;
-                    top: -20px;
-                    left: 160px;
+                    display: block;
+                    min-width: 180px;
+                    padding: 10px 0 20px;
+                    top: 40px;
+                    left: 0;
+                    background-color: $lightest-neutral;
+                    color: #4884a2;
+                    transition: all 0.2s ease;
+                    opacity: 0;
+                    visibility: hidden;
+    
+                    li {
+                        margin-top: 10px;
+    
+                        &:hover {
+                            color: $lightest-neutral;
+                        }
+                    }
+    
+                    &--nested {
+                        position: absolute;
+                        min-width: 220px;
+                        top: -20px;
+                        left: 160px;
+                    }
                 }
             }
         }
-    }
-
-    .modal-button {
-        position: fixed;
-        top: 40px;
-        right: 50px;
-        padding: 8px 18px;
-        border: 2px solid $lightest-neutral;
-        border-radius: 20px;
-        margin-left: 18px;
-        cursor: pointer;
-        z-index: 999;
-
-        svg {
-            transition: all 0.2s ease;
-            margin-left: 10px;
+    
+        .modal-button {
+            position: fixed;
+            top: 40px;
+            right: 50px;
+            padding: 8px 18px;
+            border: 2px solid $lightest-neutral;
+            border-radius: 20px;
+            margin-left: 18px;
+            cursor: pointer;
+            z-index: 999;
+    
+            svg {
+                transition: all 0.2s ease;
+                margin-left: 10px;
+            }
         }
-    }
-
-    .active-modal {
-        svg {
-            transform: rotate(180deg);
+    
+        .active-modal {
+            svg {
+                transform: rotate(180deg);
+            }
         }
     }
 }
