@@ -21,7 +21,7 @@
         }
         
         .green-text {
-            color: #7eb104;
+            color: $darker-green;
         }
 
         ul {
@@ -42,7 +42,7 @@
                     vertical-align: middle;
 
                     &:hover {
-                        color: #f2ca27;
+                        color: $light-yellow;
                     }
                 }
             }
@@ -98,7 +98,7 @@
 
             .learn-more {
                 @include font-size(16, bold, uppercase, normal, 20);
-                color: #bb4a26;
+                color: $dark-orange;
                 transition: color 0.3s ease;
                 vertical-align: middle;
 
@@ -107,7 +107,7 @@
                 }
 
                 &:hover {
-                    color: #7eb104;
+                    color: $darker-green;
                 }
             }
         }
@@ -153,7 +153,7 @@
                     font-weight: bold;
 
                     svg {
-                        color: #7eb104;
+                        color: $darker-green;
                         width: 30px;
                         height: 30px;
                         margin-right: 8px;
@@ -194,11 +194,11 @@
                             transition: color 0.3s ease;
 
                             &:hover {
-                                color: #7eb104;
+                                color: $darker-green;
                             }
 
                             svg {
-                                color: #7eb104;
+                                color: $darker-green;
                                 width: 16px;
                                 height: 16px;
                                 margin: -1px 0 0 10px;
@@ -278,7 +278,7 @@
                             border-radius: inherit;
                             width:  29%;
                             height: 100%;
-                            background-color: #7eb12c;
+                            background-color: $lighter-green;
                             transition: width 0.3s ease;
                             z-index: -1;
                         }

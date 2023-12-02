@@ -34,7 +34,7 @@
             h4 {
                 @include font-size(35, bold, uppercase, -0.5, 30);
                 font-size: em(40, 10);
-                color: #7eb12c;
+                color: $lighter-green;
 
                 @include bp-xs-phone {
                     font-size: em(35, 10);
@@ -106,7 +106,7 @@
             top: -42px;
             left: 14.5%;
             height: 100%;
-            fill: #636d8d;
+            fill: $faded-blue;
 
             &:last-of-type {
                 transform: scale(0.3);

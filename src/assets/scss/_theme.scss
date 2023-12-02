@@ -7,7 +7,7 @@
 }
 
 ::selection {
-    background-color: #BB4A26;
+    background-color: $dark-orange;
 }
 
 html,
@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    background-color: #C75A4F;
+    background-color: $bg-color;
     background-size: cover;
     cursor: default;
 

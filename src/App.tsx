@@ -22,7 +22,7 @@ function App() {
       <AppHeader activeModal={activeModal} setActiveModal={setActiveModal} />
       {activeModal && <MenuModal />}
       { routes }
-      <MobileNavbar />
+      <MobileNavbar activeModal={activeModal} setActiveModal={setActiveModal} />
     </>
   )
 }
