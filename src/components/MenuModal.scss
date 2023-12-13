@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     z-index: 998;
-    background-color: $darkest-neutral;
+    background-color: $darkest-blue;
     overflow-y: scroll;
 
     @include bp-custom-min(1080) {
@@ -14,8 +14,8 @@
 
     
     .events-collapsible {
-        position: relative;
         @include font-size(30, bold, uppercase, -0.5, 35);
+        position: relative;
         font-family: $secondary-font-stack;
         display: block;
         padding: 20px 30px;
@@ -54,28 +54,51 @@
         }
     }
 
-    .overall-collapsible {
+    .Collapsible {
+        min-height: 210px;
+    }
+
+    .overall-collapsible,
+    .overall-collapsible__closed {
         @include font-size(14, bold, uppercase, normal, 20);
-        position: absolute;
-        top: 150px;
         left: 50%;
-        padding: 3px 13px;
         transform: translateX(-50%);
+        padding: 3px 13px;
         border: 2px solid $lightest-neutral;
         border-radius: 50px;
         cursor: pointer;
         z-index: 999;
+        // transition: all 10s ease;
+    }
+
+    .overall-collapsible {
+        position: absolute;
+        top: 140px;
+        // left: 50%;
+        // padding: 3px 13px;
+        // transform: translateX(-50%);
+        // border: 2px solid $lightest-neutral;
+        // border-radius: 50px;
+        // cursor: pointer;
+        // z-index: 999;
     
         @include bp-custom-min(1080) {
             display: none;
+        }
+
+        &__closed {
+            position: relative;
+            display: inline-block;
+            margin: 140px 0 40px;
         }
     
         &--content {
             display: flex;
             padding-bottom: 60px;
             flex-direction: column-reverse;
-    
+            
             @include bp-custom-min(1080) {
+                height: 100vh;
                 flex-direction: row;
             }
 
@@ -421,6 +444,7 @@
                         
                         @include bp-custom-min(1080) {
                             flex-direction: row;
+                            align-items: flex-start;
                             justify-content: space-between;
                         }
 
@@ -430,6 +454,15 @@
 
                             @include bp-custom-min(1080) {
                                 width: 50%;
+                            }
+
+                            ul {
+                                li {
+                                    @include bp-custom-min(1080) {
+                                        @include font-size(16, 800, uppercase, normal, 0);
+                                        width: fit-content;
+                                    }
+                                }
                             }
                         }
 
@@ -502,6 +535,12 @@
                         .group-2 {
                             h3 {
                                 margin-bottom: 20px;
+                            }
+
+                            ul {
+                                li {
+                                    font-size: rem(14);
+                                }
                             }
                         }
                     }
@@ -577,6 +616,48 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .mobile-nav {
+        padding: 30px 20px;
+        margin: 0 0 80px 20px;
+        background: linear-gradient(0deg, rgba(72,132,162,1) 0%, rgba(126,177,44,1) 100%);
+
+        @include bp-custom-min(1080) {
+            display: none;
+        }
+
+        ul {
+            font-family: $secondary-font-stack;
+            color: $navy;
+
+            li {
+                transition: color 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    color: $lightest-neutral;
+                }
+            }
+            
+            .category-link {
+                @include font-size(35, 700, uppercase, 0, 40);
+
+                &:not(:first-of-type) {
+                    margin-top: 20px;
+                }
+            }
+
+            .general-link {
+                @include font-size(24, 700, uppercase, 0, 25);
+                margin-top: 10px
+            }
+
+            .specific-link {
+                @include font-size(16, 700, uppercase, 0, 20);
+                margin-top: 5px;
             }
         }
     }
