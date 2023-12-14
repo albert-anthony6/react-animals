@@ -102,18 +102,13 @@
                 flex-direction: row;
             }
 
-            h4,
             .date {
-                @include font-size(24, bold, uppercase, -0.5, 25);
+                @include font-size(24, 700, uppercase, -0.5, 25);
             }
 
             h3 {
-                @include font-size(36, bold, uppercase, -0.8, 40);
+                @include font-size(36, 700, uppercase, -0.8, 40);
                 font-family: $secondary-font-stack;
-            }
-            
-            .green-text {
-                color: $darker-green;
             }
 
             ul {
@@ -285,7 +280,7 @@
                 }
 
                 h5 {
-                    @include font-size(16, bold, uppercase, normal, 20);
+                    @include font-size(16, 700, uppercase, normal, 20);
                     margin: 0 0 20px;
                 }
 
@@ -311,7 +306,7 @@
                 }
 
                 .learn-more {
-                    @include font-size(16, bold, uppercase, normal, 20);
+                    @include font-size(16, 700, uppercase, normal, 20);
                     color: $lightest-neutral;
                     transition: color 0.3s ease;
                     vertical-align: middle;

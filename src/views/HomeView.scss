@@ -1,127 +1,191 @@
 .home-view {
-    min-height: calc(100vh - 100px);
     position: relative;
+    padding-bottom: 100px;
 
-    .hero-banner {
-        padding: 315px 0 0 30px;
+    .hero-section {
+        min-height: calc(100vh - 100px);
+        position: relative;
 
-        @include bp-md-tablet {
-            padding-left: 80px;
-        }
-
-        .hero-text {
-            font-size: rem(3.5);
-            text-align: left;
-            width: fit-content;
-            
-            @include bp-xs-phone {
-                font-size: rem(4.5);
-            }
-            
-            @include bp-sm-phone-landscape {
-                font-size: rem(6);
-            }
-            
+        .hero-banner {
+            padding: 315px 0 0 30px;
+    
             @include bp-md-tablet {
-                font-size: rem(8);
+                padding-left: 80px;
             }
-            
-            @include bp-xl-desktop {
-                font-size: rem(10);
-                text-align: center;
-            }
-
-            h4 {
-                @include font-size(35, bold, uppercase, -0.5, 30);
-                font-size: em(40, 10);
-                color: $lighter-green;
-
+    
+            .hero-text {
+                font-size: rem(3.5);
+                text-align: left;
+                width: fit-content;
+                
                 @include bp-xs-phone {
-                    font-size: em(35, 10);
+                    font-size: rem(4.5);
+                }
+                
+                @include bp-sm-phone-landscape {
+                    font-size: rem(6);
                 }
                 
                 @include bp-md-tablet {
-                    font-size: em(30, 10);
+                    font-size: rem(8);
+                }
+                
+                @include bp-xl-desktop {
+                    font-size: rem(10);
+                    text-align: center;
+                }
+    
+                h4 {
+                    @include font-size(35, bold, uppercase, -0.5, 30);
+                    font-size: em(40, 10);
+                    color: $lighter-green;
+    
+                    @include bp-xs-phone {
+                        font-size: em(35, 10);
+                    }
+                    
+                    @include bp-md-tablet {
+                        font-size: em(30, 10);
+                    }
+                }
+            
+                h1 {
+                    @include font-size(200, bold, uppercase, -2.5, 70);
+                    font-size: em(200, 10);
+                    font-family: $secondary-font-stack;
+    
+                    @include bp-sm-phone-landscape {
+                        line-height: 100px;
+                    }
+    
+                    @include bp-md-tablet {
+                        line-height: 130px;
+                    }
+    
+                    @include bp-xl-desktop {
+                        line-height: 180px;
+                    }
                 }
             }
         
-            h1 {
-                @include font-size(200, bold, uppercase, -2.5, 70);
-                font-size: em(200, 10);
-                font-family: $secondary-font-stack;
-
-                @include bp-sm-phone-landscape {
-                    line-height: 100px;
+            .bg-video {
+                position: absolute;
+                top: -40px;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: calc(100% + 45px);
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba($darkest-neutral, 0.5);
+                    z-index: 1;
                 }
-
-                @include bp-md-tablet {
-                    line-height: 130px;
+    
+                video {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
+            }
+        }
 
-                @include bp-xl-desktop {
-                    line-height: 180px;
+        .scroll-indicator {
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            bottom: -61px;
+            left: 0;
+            background-image: linear-gradient(0deg, rgba(99, 109, 141, 0) 0%, #636d8d 100%);
+            z-index: 2;
+    
+            svg {
+                position: absolute;
+                width: 150px;
+                top: -41.5px;
+                left: 14.5%;
+                height: 100%;
+                fill: $faded-blue;
+    
+                &:last-of-type {
+                    transform: scale(0.3);
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+
+    .experience-section {
+        position: relative;
+        margin-top: 100px;
+
+        &--text {
+            max-width: 56%;
+            margin: 0 auto 120px;
+        }
+
+        .carousel {
+            padding-top: 100px;
+
+            .custom-button-group {
+                position: absolute;
+                display: flex;
+                bottom: 0;
+                right: 30px;
+                align-items: center;
+                justify-content: space-between;
+    
+                button {
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    margin: unset;
+                    border-radius: 50%;
+                    background-color: $dark-orange;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: $navy;
+                    }
+
+                    &:first-of-type {
+                        margin-right: 20px;
+                    }
+    
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) scale(0.9);
+                        color: $lightest-neutral;
+                    }
+                }
+            }
+
+            & :nth-child(3n+2) {
+                margin-top: 40px;
+            }
+
+            & :nth-child(3n+3) {
+                margin-top: -40px;
+            }
+            
+            .slide {
+                height: 600px;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
             }
         }
     
-        .bg-video {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            z-index: -1;
-            width: 100%;
-            height: calc(100% + 40px);
-
-            &::after {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background-color: rgba($darkest-neutral, 0.5);
-                z-index: 1;
-            }
-
-            video {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-
-    .scroll-indicator {
-        position: absolute;
-        width: 100%;
-        height: 60px;
-        bottom: -60px;
-        left: 0;
-        background-image: linear-gradient(0deg, rgba(99, 109, 141, 0) 0%, #636d8d 100%);
-
-        svg {
-            position: absolute;
-            width: 150px;
-            top: -42px;
-            left: 14.5%;
-            height: 100%;
-            fill: $faded-blue;
-
-            &:last-of-type {
-                transform: scale(0.3);
-                margin-top: 3px;
-            }
-        }
-    }
-
-    .slide {
-        height: 600px;
-        
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 }

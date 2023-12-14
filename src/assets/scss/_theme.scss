@@ -28,7 +28,7 @@ body {
 }
 
 p {
-    font-size: rem(16);
+    @include font-size(16, 300, none, normal, 25);
 }
 
 a {
@@ -41,9 +41,13 @@ h1 {
 }
 
 h2 {
-    font-size: rem(52);
-    line-height: 1;
-    margin-bottom: 15px;
+    @include font-size(70, 700, uppercase, -1, 65);
+    font-family: $secondary-font-stack;
+    margin: 5px 0 20px;
+}
+
+h4 {
+    @include font-size(24, 700, uppercase, -0.5, 25);
 }
 
 ul {
@@ -64,4 +68,12 @@ button {
     &:hover {
         background-color: #e0e0e0;
     }
+}
+
+.green-text {
+    color: $darker-green;
+}
+
+.headline {
+    @include font-size(28, 300, none, normal, 32);
 }
