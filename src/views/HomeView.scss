@@ -126,8 +126,8 @@
         margin-top: 100px;
 
         &--text {
-            max-width: 56%;
-            margin: 0 auto 120px;
+            max-width: 54%;
+            margin: 0 auto 20px;
         }
 
         .carousel {
@@ -177,7 +177,63 @@
             }
             
             .slide {
+                position: relative;
                 height: 600px;
+                
+                &:hover .slide--name::before {
+                    transform: translateX(-50%) scale(1);
+                }
+
+                &:hover .learn-more__animated {
+                    opacity: 1;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($darkest-neutral, 0.5);
+                }
+                
+                &--name {
+                    position: absolute;
+                    font-family: $secondary-font-stack;
+                    bottom: 25%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-align: center;
+                    
+                    @include bp-custom-min(1080) {
+                        white-space: nowrap;
+                    }
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 80px;
+                        height: 2px;
+                        left: 50%;
+                        bottom: -8px;
+                        transform: translateX(-50%) scale(0);
+                        transition: all 0.3s ease;
+                        background-color: $lightest-neutral;
+                    }
+                }
+
+                .learn-more__animated {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    white-space: nowrap;
+                    opacity: 0;
+                    transition: all 0.3s ease;
+
+                    &::before {
+                        background-color: $dark-orange;
+                    }
+                }
                 
                 img {
                     width: 100%;

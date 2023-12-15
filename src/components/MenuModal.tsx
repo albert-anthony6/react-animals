@@ -175,7 +175,7 @@ function MenuModal() {
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="https://www.memphiszoo.org/zoo-lights" className="learn-more"> Learn More <FontAwesomeIcon icon={faArrowRightLong} /></a>
+                            <a href="https://www.memphiszoo.org/zoo-lights" className="learn-more__animated"> Learn More <FontAwesomeIcon icon={faArrowRightLong} /></a>
                         </div>
                     </div>
                 </section>

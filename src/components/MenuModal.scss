@@ -576,39 +576,6 @@
                                 }
                             }
                         }
-
-                        .learn-more {
-                            position: relative;
-                            display: inline-block;
-                            padding: 8px 20px;
-                            margin-top: 40px;
-                            border-radius: 50px;
-                            z-index: 1;
-                            
-                            svg {
-                                vertical-align: middle;
-                                margin: 0 0 2px 7px;
-                            }
-
-                            &:hover {
-                                &::before {
-                                    width: 100%;
-                                }
-                            }
-
-                            &::before {
-                                content: "";
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                border-radius: inherit;
-                                width:  29%;
-                                height: 100%;
-                                background-color: $lighter-green;
-                                transition: width 0.3s ease;
-                                z-index: -1;
-                            }
-                        }
                     }
                 }
             }

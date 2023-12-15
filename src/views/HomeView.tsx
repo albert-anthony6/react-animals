@@ -25,62 +25,77 @@ const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonG
 function HomeView() {
     const slides = [
         {
+            name: 'African Veldt',
             img: 'african_veldt.jpg',
             link: ''
         },
         {
+            name: 'Animals of the Night',
             img: 'animals_of_the_night.jpg',
             link: ''
         },
         {
+            name: 'Aquarium',
             img: 'aquarium.webp',
             link: ''
         },
         {
+            name: 'Cat Country',
             img: 'cat_country.jpg',
             link: ''
         },
         {
+            name: 'China',
             img: 'china.jpg',
             link: ''
         },
         {
+            name: 'Dragon\'s Lair',
             img: 'dragons_lair.jpg',
             link: ''
         },
         {
+            name: 'Herpetarium',
             img: 'herpetarium.webp',
             link: ''
         },
         {
+            name: 'Northwest Passage',
             img: 'northwest_passage.webp',
             link: ''
         },
         {
+            name: 'Once Upon a Farm',
             img: 'once_upon_a_farm.jpg',
             link: ''
         },
         {
+            name: 'Pelican Pool',
             img: 'pelican_pool.webp',
             link: ''
         },
         {
+            name: 'Penguin Rock',
             img: 'penguin_rock.webp',
             link: ''
         },
         {
+            name: 'Primate Canyon',
             img: 'primate_canyon.webp',
             link: ''
         },
         {
+            name: 'Teton Trek',
             img: 'teton_trek.webp',
             link: ''
         },
         {
+            name: 'Tropical Bird House',
             img: 'tropical_bird_house.webp',
             link: ''
         },
         {
+            name: 'Zambezi River Hippo Camp',
             img: 'zambezi_river_hippo_camp.webp',
             link: ''
         },
@@ -145,6 +160,8 @@ function HomeView() {
                 {slides.map((slide, idx) => (
                     <div className="slide" key={`${idx}-${slide.img}`}>
                         <img src={`./src/assets/images/carousel-images/${slide.img}`} />
+                        <h4 className="slide--name">{ slide.name }</h4>
+                        <a href={slide.link} className="learn-more__animated"> Learn More <FontAwesomeIcon icon={faArrowRightLong} /></a>
                     </div>
                 ))}
             </Carousel>
