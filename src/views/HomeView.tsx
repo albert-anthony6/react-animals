@@ -166,6 +166,35 @@ function HomeView() {
                 ))}
             </Carousel>
         </section>
+        <section className="adventures-section">
+            <h4>Something for Everyone</h4>
+            <h2>Find Your Adventure</h2>
+            <p className="headline">There's adventure around every corner of the Memphis Zoo for both young and old!</p>
+            <div className="adventures-section__flexed">
+                <div className="adventures-section--description">
+                    <p>Watch a butterfly emerge from it's cocoon, experience the magic of a hopping kangaroo, or take part in one of our special events. At Memphis Zoo there's something for everyone to enjoy!</p>
+                    <a href="#" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
+                </div>
+                <div className="adventures-section--links">
+                        <div className="link">
+                            <img src="./src/assets/images/admission.webp" alt="Admission." />
+                            <h4>Admission</h4>
+                        </div>
+                        <div className="link">
+                            <img src="./src/assets/images/seasonal-experiences.webp" alt="Admission." />
+                            <h4>Seasonal Experiences</h4>
+                        </div>
+                        <div className="link">
+                            <img src="./src/assets/images/special-events.jpg" alt="Admission." />
+                            <h4>Special Events</h4>
+                        </div>
+                        <div className="link">
+                            <img src="./src/assets/images/dining.jpg" alt="Admission." />
+                            <h4>Dining</h4>
+                        </div>
+                </div>
+            </div>
+        </section>
     </main>
   )
 }

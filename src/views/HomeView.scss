@@ -244,4 +244,115 @@
         }
     
     }
+
+    .adventures-section {
+        margin: 100px 0 0;
+        color: $navy;
+        
+        @include bp-custom-min(1080) {
+            margin: 100px 80px 0;
+        }
+
+        .learn-more__animated {
+            font-weight: 700;
+
+            &::before {
+                background-color: $lightest-neutral;
+            }
+        }
+
+        .headline {
+            @include bp-custom-min(1080) {
+                width: 70%; 
+            }
+        }
+
+        &__flexed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            @include bp-custom-min(1080) {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+        }
+
+        &--description {
+            width: 100%;
+            padding-top: 25px;
+            
+            @include bp-custom-min(1080) {
+                width: 33%;
+            }
+        }
+
+        &--links {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+            
+            @include bp-custom-min(1080) {
+                width: 63%;
+                margin-top: -150px;
+            }
+
+            
+            & :nth-child(n+3) {
+                @include bp-custom-min(1080) {
+                    margin-top: 40px;
+                }
+            }
+            
+            .link {
+                position: relative;
+                width: 100%;
+                height: 50vw;
+                margin-bottom: 20px;
+                
+                @include bp-custom-min(1080) {
+                    width: 46%;
+                    height: auto;
+                    margin-bottom: 0;
+                }
+
+                &:first-of-type {
+                    @include bp-custom-min(1080) {
+                        margin-top: 180px;
+                    }
+                }
+
+                &:last-of-type {
+                    @include bp-custom-min(1080) {
+                        margin-top: -140px;
+                    }
+
+                    @include bp-custom-min(1350) {
+                        margin-right: 40px;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    @include bp-custom-min(1080) {
+                        height: auto;
+                    }
+                }
+
+                h4 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
 }
