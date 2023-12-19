@@ -355,4 +355,37 @@
             }
         }
     }
+
+    .conservation-section {
+        position: relative;
+        margin-top: 131px;
+        text-align: center;
+
+        svg {
+            position: absolute;
+            top: 65px;
+            left: 0;
+            fill: none;
+            stroke: #000;
+            stroke-width: 2;
+            transition: all 3s ease 0s;
+            opacity: 0.2;
+            
+            path{
+                stroke-miterlimit: 10;
+                stroke-linecap: round;
+                stroke-dasharray: 9625;
+                animation: 3s fillSvg linear;
+            }
+        }
+
+        @keyframes fillSvg {
+            0% {
+                stroke-dashoffset: 9625;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 import './HomeView.scss';
 import videoSrc from '../assets/videos/hero_bg.mp4';
 import IconScrollIndicator from '../assets/icons/icon_scroll_indicator.svg?react';
+import IconConservation from '../assets/icons/icon_conservation.svg?react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownLong, faArrowRightLong, faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import Carousel, { ButtonGroupProps, StateCallBack }  from 'react-multi-carousel';
@@ -194,6 +195,12 @@ function HomeView() {
                         </div>
                 </div>
             </div>
+        </section>
+        <section className="conservation-section">
+            <h4>Memphis Zoo Conservation</h4>
+            <h2>Secure the Future of a World of Wildlife</h2>
+            <p className="headline">We aim to improve the security and stability of animal populations - both in the wild and in captivity.</p>
+            <IconConservation />
         </section>
     </main>
   )
