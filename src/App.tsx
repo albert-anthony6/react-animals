@@ -2,6 +2,7 @@ import './App.scss';
 import './assets/scss/_theme.scss';
 import { useState } from 'react';
 import AppHeader from './components/AppHeader.tsx';
+import AppFooter from './components/AppFooter.tsx';
 import MobileNavbar from './components/MobileNavbar.tsx';
 import HomeView from './views/HomeView.tsx';
 import MenuModal from './components/MenuModal';
@@ -23,6 +24,7 @@ function App() {
       {activeModal && <MenuModal />}
       { routes }
       <MobileNavbar activeModal={activeModal} setActiveModal={setActiveModal} />
+      <AppFooter />
     </>
   )
 }
