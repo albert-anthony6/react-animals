@@ -55,19 +55,11 @@ ul {
 }
 
 button {
-    font-size: em(14, 10);
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
+    @include font-size(16, 700, capitalize, normal, 20);
+    color: $lightest-neutral;
     outline: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: $lightest-neutral;
-    transition: background-color .2s ease;
-
-    &:hover {
-        background-color: #e0e0e0;
-    }
+    border: none;
+    background-color: transparent;
 }
 
 .green-text {
@@ -108,5 +100,99 @@ button {
         background-color: $lighter-green;
         transition: width 0.3s ease;
         z-index: -1;
+    }
+}
+
+.search-container {
+    position: relative;
+
+    &:hover {
+        ::placeholder {
+            color: $light-yellow;
+        }
+    }
+
+    input {
+        @include font-size(14, bold, none, normal, 20);
+        width: 100%;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background-color: $input-bg;
+        color: $light-yellow;
+
+        &::placeholder {
+            color: $lightest-neutral;
+        }
+    }
+
+    svg {
+        position: absolute;
+        padding: 5px;
+        height: 65%;
+        top: 50%;
+        right: 0;
+        color: $navy;
+        transform: translateY(-50%);
+        background-color: $darker-green;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $light-yellow;
+        }
+    }       
+}
+
+.form-checkbox {
+    @include font-size(16, 700, none, normal, 20);
+    display: block;
+    margin-bottom: 15px;
+
+    input {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+    }
+
+    label {
+        position: relative;
+        cursor: pointer;
+    }
+    
+    label:before {
+        content:'';
+        position: relative;
+        display: inline-block;
+        margin: -3px -17px 0 0;
+        padding: 7px;
+        left: -25px;
+        vertical-align: middle;
+        border: 2px solid $lightest-neutral;
+        border-radius: 3px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    input:checked + label:before {
+        background-color: $lightest-neutral;
+    }
+
+    input:checked + label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: -19px;
+        width: 6px;
+        height: 12px;
+        border: solid $darkest-neutral;
+        border-width: 0 1px 1px 0;
+        transform: rotate(45deg);
     }
 }

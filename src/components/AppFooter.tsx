@@ -1,7 +1,7 @@
 import './AppFooter.scss';
 import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobile } from "@fortawesome/free-solid-svg-icons";
+import { faMobile, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faTwitter, faYoutube, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function AppFooter() {
@@ -66,6 +66,37 @@ function AppFooter() {
             <h5><a href="#">zooinfo@memphiszoo.org</a></h5>
           </div>
         </div>
+        <form>
+          <span className="form-heading">Subscribe here to become a Zoo Insider</span>
+          <div className="search-container">
+            <input type="text" placeholder="EMAIL" />
+            <FontAwesomeIcon icon={faArrowRightLong} />
+          </div>
+          <span className="form-heading">Subscribe here to join our texting club</span>
+          <div className="search-container">
+            <input type="text" placeholder="PHONE NUMBER" />
+          </div>
+          <div className="checkboxes">
+            <div className='form-checkbox'>
+              <input type="checkbox" id="promo-texts" />
+              <label htmlFor="promo-texts">I would like to receive promotional text messages</label>
+            </div>
+            <div className='form-checkbox'>
+              <input type="checkbox" id="membership-texts" />
+              <label htmlFor="membership-texts">I would like to receive account or membership reminder text messages</label>
+            </div>
+            <div className='form-checkbox'>
+              <input type="checkbox" id="donation-texts" />
+              <label htmlFor="donation-texts">I would like to receive Memphis Zoo donation opportunity text messages</label>
+            </div>
+            <div className='form-checkbox'>
+              <input type="checkbox" id="career-texts" />
+              <label htmlFor="career-texts">I would like to receive volunteer and career opportunity text messages</label>
+            </div>
+          </div>
+          <button type="button" className="learn-more__animated">Submit <FontAwesomeIcon icon={faArrowRightLong} /></button>
+          <span className="disclaimer">Disclaimer and Compliance</span>
+        </form>
     </footer>
   )
 }

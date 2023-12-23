@@ -26,8 +26,8 @@ function MobileNavbar({ activeModal, setActiveModal }: Props) {
             {
                 activeSearch &&
                 <div className="search-bar">
-                    <div className="input-container">
-                        <input type="text" placeholder='SEARCH...' />
+                    <div className="search-container">
+                        <input type="text" placeholder="SEARCH..." />
                         <FontAwesomeIcon icon={faArrowRightLong} />
                     </div>
                 </div>

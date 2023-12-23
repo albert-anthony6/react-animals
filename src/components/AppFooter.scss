@@ -90,4 +90,76 @@
 
         }
     }
+
+    form {
+        position: relative;
+        width: 35.5%;
+        margin: 40px auto 0;
+        padding-bottom: 20px;
+        text-align: center;
+
+        .form-heading {
+            @include font-size(24, 300, uppercase, normal, 30);
+            font-family: $secondary-font-stack;
+        }
+
+        .search-container:first-of-type {
+            margin: 17px 0 30px;
+            
+            input {
+                font-weight: 300;
+            }
+        }
+
+        .search-container:nth-child(3n + 1) {
+            width: 35%;
+            margin: 6px auto 20px;
+        }
+
+        .checkboxes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            .form-checkbox {
+                width: 40%;
+                text-align: left;
+            }
+        }
+
+        .learn-more__animated {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 115px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin: 40px auto 0;
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &::before {
+                width: 35%;
+                background-color: $dark-orange;
+            }
+        }
+
+        .disclaimer {
+            display: inline-block;
+            font-weight: 300;
+            margin: 79px 0 69px;
+            text-decoration: underline;
+            color: $light-yellow;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $dark-orange;
+            }
+        }
+    }
 }
