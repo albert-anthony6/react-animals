@@ -15,12 +15,14 @@ body {
     font-family: $primary-font-stack;
     color: $text-color-primary;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     background-color: $bg-color;
     background-size: cover;
     cursor: default;
+    background: linear-gradient(0deg, #7eb12c 0%, #7eb12c calc(58rem + 15vw), #107dc0 50%, #f65132 100%);
 
     &:has(.menu-modal) {
         overflow: hidden;
