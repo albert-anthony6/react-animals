@@ -2,6 +2,7 @@ import './HomeView.scss';
 import videoSrc from '../assets/videos/hero_bg.mp4';
 import IconScrollIndicator from '../assets/icons/icon_scroll_indicator.svg?react';
 import IconConservation from '../assets/icons/icon_conservation.svg?react';
+// import IconPattern from '../assets/icons/icon_bg_pattern.svg?react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownLong, faArrowRightLong, faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import Carousel, { ButtonGroupProps, StateCallBack }  from 'react-multi-carousel';
@@ -219,6 +220,7 @@ function HomeView() {
             <h2>Creating Adventures. Saving Wildlife.</h2>
             <a href="#" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
         </section>
+        {/* <IconPattern className="bg-pattern" /> */}
     </main>
   )
 }

@@ -1,6 +1,6 @@
 .home-view {
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
 
     .hero-section {
         min-height: calc(100vh - 100px);
@@ -472,7 +472,32 @@
     }
     
     .saving-wildlife-section {
+        position: relative;
         margin-top: 80px;
         text-align: center;
+
+        h2 {
+            max-width: 750px;
+            margin: 0 auto;
+
+            @include bp-custom-min(2120) {
+                max-width: fit-content;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: rem(1200);
+            top: 0;
+            left: 0;
+            background-image: url(../assets/icons/icon_bg_pattern.svg?react);
+            background-size: cover;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            opacity: .05;
+            z-index: -1;
+        }
     }
 }
