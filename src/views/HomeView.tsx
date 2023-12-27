@@ -1,5 +1,5 @@
 import './HomeView.scss';
-import videoSrc from '../assets/videos/hero_bg.mp4';
+import HeroVideo from '../assets/videos/hero_bg.mp4';
 import IconScrollIndicator from '../assets/icons/icon_scroll_indicator.svg?react';
 import IconConservation from '../assets/icons/icon_conservation.svg?react';
 // import IconPattern from '../assets/icons/icon_bg_pattern.svg?react';
@@ -133,9 +133,9 @@ function HomeView() {
                     <h4>Explore a Wonderful World of</h4>
                     <h1>Wildlife</h1>
                 </div>
-                <div className="bg-video">
+                <div className="hero-video">
                     <video loop autoPlay muted>
-                        <source src={ videoSrc } type="video/mp4" />
+                        <source src={ HeroVideo } type="video/mp4" />
                         Your browser does not support the video tag. It is recommended to upgrade your browser.
                     </video>
                 </div>
@@ -169,6 +169,12 @@ function HomeView() {
             </Carousel>
         </section>
         <section className="adventures-section">
+            <div className="adventure-video">
+                <video loop autoPlay muted>
+                    <source src={ HeroVideo } type="video/mp4" />
+                    Your browser does not support the video tag. It is recommended to upgrade your browser.
+                </video>
+            </div>
             <h4>Something for Everyone</h4>
             <h2>Find Your Adventure</h2>
             <p className="headline">There's adventure around every corner of the Memphis Zoo for both young and old!</p>
