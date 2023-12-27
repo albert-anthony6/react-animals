@@ -204,6 +204,7 @@ function HomeView() {
             <IconConservation />
         </section>
         <section className="initiatives-section">
+            <div className="bg-lion" />
             <div className="initiatives-section--photos">
                 <img src="./src/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
                 <img src="./src/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
@@ -213,12 +214,12 @@ function HomeView() {
                 <h4>Conservation</h4>
                 <h2>Memphis Zoo Initiatives</h2>
                 <p>Our conservation projects apply the tools and knowledge gained from scientific research to solve real-life problems threatening the world's wildlife.</p>
-                <a href="#" className="learn-more__animated">Discover Our Conservation Efforts</a>
+                <a href="https://www.memphiszoo.org/conservation" className="learn-more__animated">Discover Our Conservation Efforts <FontAwesomeIcon icon={faArrowRightLong} /></a>
             </div>
         </section>
         <section className="saving-wildlife-section">
             <h2>Creating Adventures. Saving Wildlife.</h2>
-            <a href="#" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
+            <a href="https://www.memphiszoo.org/plan-your-visit" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
         </section>
         {/* <IconPattern className="bg-pattern" /> */}
     </main>

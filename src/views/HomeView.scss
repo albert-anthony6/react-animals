@@ -423,6 +423,7 @@
     .initiatives-section {
         position: relative;
         display: flex;
+        align-items: center;
         margin-top: 260px;
         padding: 0 68px;
 
@@ -435,6 +436,23 @@
             top: -180px;
             left: -80px;
             background: linear-gradient(0deg, rgba(187, 74, 38, 0) 0%, #bb4a26 33.333334%, #bb4a26 66.666667%, rgba(187, 74, 38, 0) 100%);
+            z-index: -1;
+        }
+
+        .bg-lion {
+            position: absolute;
+            width: 51vw;
+            height: 70%;
+            top: -80px;
+            left: 33%;
+            background-image: url("../assets/images/lion.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all .6s ease 0s;
+            mix-blend-mode: luminosity;
+            opacity: 0.25;
+            overflow: hidden;
             z-index: -1;
         }
 
@@ -468,6 +486,31 @@
 
         &--text {
             width: 50%;
+
+            p,
+            .learn-more__animated {
+                margin-left: 40px;
+            }
+
+            p {
+                width: 90%;
+                margin-top: 40px;
+            }
+            
+            .learn-more__animated {
+                margin-top: 20px;
+
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+
+                &::before {
+                    width: 15%;
+                    background-color: $navy;
+                }
+            }
         }
     }
     
