@@ -27,8 +27,12 @@ const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonG
 function HomeView() {
     const scrollRef = useRef<HTMLElement>(null);
     const [hasSectionShown, setHasSectionShown] = useState({
-        'hero': false,
-        'experience': false,
+        "hero": false,
+        "experience": false,
+        "adventures": false,
+        "conservation": false,
+        "initiatives": false,
+        "saving-wildlife": false,
     });
     const slides = [
         {
@@ -108,7 +112,7 @@ function HomeView() {
         },
     ]
     const responsive = {
-        'lg-desktop': {
+        "lg-desktop": {
           breakpoint: { max: 8000, min: 1440 },
           items: 6
         },
@@ -120,7 +124,7 @@ function HomeView() {
           breakpoint: { max: 1080, min: 840 },
           items: 4
         },
-        'sm-tablet': {
+        "sm-tablet": {
           breakpoint: { max: 840, min: 600 },
           items: 3
         },
@@ -174,7 +178,7 @@ function HomeView() {
                 </div>
             </section>
             <section className={hasSectionShown["experience"] ? "experience-section show-animation" : "experience-section"}>
-                <div className={hasSectionShown['experience'] ? "experience-section--text fade-in" : "experience-section--text hide"}>
+                <div className={hasSectionShown["experience"] ? "experience-section--text fade-in" : "experience-section--text hide"}>
                     <h4 className="green-text">Experience The Wild</h4>
                     <h2>Your Passport To Wildlife From Across The Globe</h2>
                     <p className="headline">Memphis Zoo is home to 3,500+ animals. Find your favorites and discover new species to love!</p>
@@ -211,7 +215,7 @@ function HomeView() {
                         <p>Watch a butterfly emerge from it's cocoon, experience the magic of a hopping kangaroo, or take part in one of our special events. At Memphis Zoo there's something for everyone to enjoy!</p>
                         <a href="#" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
                     </div>
-                    <div className="adventures-section--links">
+                    <div className={hasSectionShown["adventures"] ? "adventures-section--links fade-in" : "adventures-section--links hide"}>
                             <div className="link">
                                 <img src="./src/assets/images/admission.webp" alt="Admission." />
                                 <h4>Admission</h4>
@@ -231,15 +235,15 @@ function HomeView() {
                     </div>
                 </div>
             </section>
-            <section className="conservation-section">
+            <section className={hasSectionShown["conservation"] ? "conservation-section fade-in" : "conservation-section hide"}>
                 <h4>Memphis Zoo Conservation</h4>
                 <h2>Secure the Future of a World of Wildlife</h2>
                 <p className="headline">We aim to improve the security and stability of animal populations - both in the wild and in captivity.</p>
-                <IconConservation />
+                {hasSectionShown["conservation"] && <IconConservation />}
             </section>
             <section className="initiatives-section">
                 <div className="bg-lion" />
-                <div className="initiatives-section--photos">
+                <div className={hasSectionShown["initiatives"] ? "initiatives-section--photos fade-in" : "initiatives-section--photos hide"}>
                     <img src="./src/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
                     <img src="./src/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
                     <img src="./src/assets/images/memzoo_penguin.jpg" alt="Penguins Flapping." />
@@ -251,7 +255,7 @@ function HomeView() {
                     <a href="https://www.memphiszoo.org/conservation" className="learn-more__animated">Discover Our Conservation Efforts <FontAwesomeIcon icon={faArrowRightLong} /></a>
                 </div>
             </section>
-            <section className="saving-wildlife-section">
+            <section className={hasSectionShown["saving-wildlife"] ? "saving-wildlife-section fade-in" : "saving-wildlife-section hide"}>
                 <h2>Creating Adventures. Saving Wildlife.</h2>
                 <a href="https://www.memphiszoo.org/plan-your-visit" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
             </section>
