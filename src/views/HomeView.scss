@@ -2,10 +2,30 @@
     position: relative;
     padding-bottom: 60px;
 
-    .hero-section {
-        min-height: calc(100vh - 100px);
-        position: relative;
+    .hide {
+        opacity: 0;
+    }
 
+    .fade-in {
+        animation: fade-in 3s, slide-up-from-below-2 3s;
+    }
+
+    .hero-section {
+        position: relative;
+        min-height: calc(100vh - 100px);
+
+        &.show-animation .hero-banner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: slide-down-from-above 1s;
+
+            h4,
+            h1 {
+                animation: slide-up-from-below-2 2s, fade-in 2s;
+            }
+        }
+        
         .hero-banner {
             padding: 315px 0 0 30px;
     
@@ -96,6 +116,10 @@
             }
         }
 
+        &.show-animation .scroll-indicator {
+            animation: slide-up-from-below 1.3s linear;
+        }
+
         .scroll-indicator {
             position: absolute;
             width: 100%;
@@ -108,7 +132,7 @@
             svg {
                 position: absolute;
                 width: 150px;
-                top: -41.5px;
+                top: -42px;
                 left: 14.5%;
                 height: 100%;
                 fill: $faded-blue;
@@ -140,6 +164,30 @@
             transform: rotate(180deg);
             opacity: .05;
             z-index: -1;
+        }
+
+        &.show-animation {
+            .carousel {
+                & ul li {
+                    animation: pop 3s;
+                }
+                & ul li:nth-child(2) {
+                    animation-delay: 200ms;
+                }
+                & ul li:nth-child(3) {
+                    animation-delay: 400ms;
+                }
+                & ul li:nth-child(4) {
+                    animation-delay: 600ms;
+                }
+                & ul li:nth-child(5) {
+                    animation-delay: 800ms;
+                }
+                & ul li:nth-child(6) {
+                    animation-delay: 1000ms;
+                }
+            }
+
         }
 
         &--text {

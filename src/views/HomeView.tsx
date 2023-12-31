@@ -1,8 +1,8 @@
 import './HomeView.scss';
+import { useRef, useState, useEffect } from 'react';
 import HeroVideo from '../assets/videos/hero_bg.mp4';
 import IconScrollIndicator from '../assets/icons/icon_scroll_indicator.svg?react';
 import IconConservation from '../assets/icons/icon_conservation.svg?react';
-// import IconPattern from '../assets/icons/icon_bg_pattern.svg?react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownLong, faArrowRightLong, faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import Carousel, { ButtonGroupProps, StateCallBack }  from 'react-multi-carousel';
@@ -25,6 +25,11 @@ const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonG
   
 
 function HomeView() {
+    const scrollRef = useRef<HTMLElement>(null);
+    const [hasSectionShown, setHasSectionShown] = useState({
+        'hero': false,
+        'experience': false,
+    });
     const slides = [
         {
             name: 'African Veldt',
@@ -123,113 +128,135 @@ function HomeView() {
           breakpoint: { max: 600, min: 0 },
           items: 2
         }
-      };
+    };
 
-  return (
-    <main className="home-view">
-        <section className="hero-section">
-            <div className="hero-banner">
-                <div className="hero-text">
-                    <h4>Explore a Wonderful World of</h4>
-                    <h1>Wildlife</h1>
+    useEffect(() => {
+        function handleAnimations() {
+            const sections = scrollRef.current?.querySelectorAll("section");
+            sections?.forEach((sec: HTMLElement) => {
+                const top = window.scrollY + 500;
+                const offset = sec.offsetTop;
+                const height = sec.offsetHeight;
+        
+                if (top >= offset && top < offset + height) {
+                    const sectionName = sec.className.substring(0, sec.className.indexOf("-section"));
+                    console.log(sectionName);
+                    setHasSectionShown((prevState) => ({...prevState, [sectionName]: true}));
+                }
+            });
+        }
+        
+        // Invoke on page load
+        handleAnimations();
+
+        window.onscroll = () => {
+            handleAnimations();
+        }
+    }, [])
+    return (
+        <main ref={scrollRef} className="home-view">
+            <section className={hasSectionShown["hero"] ? 'hero-section show-animation' : 'hero-section hide'}>
+                <div className="hero-banner">
+                    <div className="hero-text">
+                        <h4>Explore a Wonderful World of</h4>
+                        <h1>Wildlife</h1>
+                    </div>
+                    <div className="hero-video">
+                        <video loop autoPlay muted>
+                            <source src={ HeroVideo } type="video/mp4" />
+                            Your browser does not support the video tag. It is recommended to upgrade your browser.
+                        </video>
+                    </div>
                 </div>
-                <div className="hero-video">
+                <div className="scroll-indicator">
+                    <IconScrollIndicator />
+                    <FontAwesomeIcon icon={faArrowDownLong} />
+                </div>
+            </section>
+            <section className={hasSectionShown["experience"] ? "experience-section show-animation" : "experience-section"}>
+                <div className={hasSectionShown['experience'] ? "experience-section--text fade-in" : "experience-section--text hide"}>
+                    <h4 className="green-text">Experience The Wild</h4>
+                    <h2>Your Passport To Wildlife From Across The Globe</h2>
+                    <p className="headline">Memphis Zoo is home to 3,500+ animals. Find your favorites and discover new species to love!</p>
+                </div>
+                <Carousel
+                    responsive={responsive}
+                    className="carousel"
+                    infinite={false}
+                    draggable={false}
+                    arrows={false}
+                    customButtonGroup={<CustomButtonGroup />}
+                >
+                    {slides.map((slide, idx) => (
+                        <div className="slide" key={`${idx}-${slide.img}`}>
+                            <img src={`./src/assets/images/carousel-images/${slide.img}`} />
+                            <h4 className="slide--name">{ slide.name }</h4>
+                            <a href={slide.link} className="learn-more__animated"> Learn More <FontAwesomeIcon icon={faArrowRightLong} /></a>
+                        </div>
+                    ))}
+                </Carousel>
+            </section>
+            <section className="adventures-section">
+                <div className="adventure-video">
                     <video loop autoPlay muted>
                         <source src={ HeroVideo } type="video/mp4" />
                         Your browser does not support the video tag. It is recommended to upgrade your browser.
                     </video>
                 </div>
-            </div>
-            <div className="scroll-indicator">
-                <IconScrollIndicator />
-                <FontAwesomeIcon icon={faArrowDownLong} />
-            </div>
-        </section>
-        <section className="experience-section">
-            <div className="experience-section--text">
-                <h4 className="green-text">Experience The Wild</h4>
-                <h2>Your Passport To Wildlife From Across The Globe</h2>
-                <p className="headline">Memphis Zoo is home to 3,500+ animals. Find your favorites and discover new species to love!</p>
-            </div>
-            <Carousel
-                responsive={responsive}
-                className="carousel"
-                infinite={false}
-                draggable={false}
-                arrows={false}
-                customButtonGroup={<CustomButtonGroup />}
-            >
-                {slides.map((slide, idx) => (
-                    <div className="slide" key={`${idx}-${slide.img}`}>
-                        <img src={`./src/assets/images/carousel-images/${slide.img}`} />
-                        <h4 className="slide--name">{ slide.name }</h4>
-                        <a href={slide.link} className="learn-more__animated"> Learn More <FontAwesomeIcon icon={faArrowRightLong} /></a>
+                <h4>Something for Everyone</h4>
+                <h2>Find Your Adventure</h2>
+                <p className="headline">There's adventure around every corner of the Memphis Zoo for both young and old!</p>
+                <div className="adventures-section__flexed">
+                    <div className="adventures-section--description">
+                        <p>Watch a butterfly emerge from it's cocoon, experience the magic of a hopping kangaroo, or take part in one of our special events. At Memphis Zoo there's something for everyone to enjoy!</p>
+                        <a href="#" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
                     </div>
-                ))}
-            </Carousel>
-        </section>
-        <section className="adventures-section">
-            <div className="adventure-video">
-                <video loop autoPlay muted>
-                    <source src={ HeroVideo } type="video/mp4" />
-                    Your browser does not support the video tag. It is recommended to upgrade your browser.
-                </video>
-            </div>
-            <h4>Something for Everyone</h4>
-            <h2>Find Your Adventure</h2>
-            <p className="headline">There's adventure around every corner of the Memphis Zoo for both young and old!</p>
-            <div className="adventures-section__flexed">
-                <div className="adventures-section--description">
-                    <p>Watch a butterfly emerge from it's cocoon, experience the magic of a hopping kangaroo, or take part in one of our special events. At Memphis Zoo there's something for everyone to enjoy!</p>
-                    <a href="#" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
+                    <div className="adventures-section--links">
+                            <div className="link">
+                                <img src="./src/assets/images/admission.webp" alt="Admission." />
+                                <h4>Admission</h4>
+                            </div>
+                            <div className="link">
+                                <img src="./src/assets/images/seasonal-experiences.webp" alt="Admission." />
+                                <h4>Seasonal Experiences</h4>
+                            </div>
+                            <div className="link">
+                                <img src="./src/assets/images/special-events.jpg" alt="Admission." />
+                                <h4>Special Events</h4>
+                            </div>
+                            <div className="link">
+                                <img src="./src/assets/images/dining.jpg" alt="Admission." />
+                                <h4>Dining</h4>
+                            </div>
+                    </div>
                 </div>
-                <div className="adventures-section--links">
-                        <div className="link">
-                            <img src="./src/assets/images/admission.webp" alt="Admission." />
-                            <h4>Admission</h4>
-                        </div>
-                        <div className="link">
-                            <img src="./src/assets/images/seasonal-experiences.webp" alt="Admission." />
-                            <h4>Seasonal Experiences</h4>
-                        </div>
-                        <div className="link">
-                            <img src="./src/assets/images/special-events.jpg" alt="Admission." />
-                            <h4>Special Events</h4>
-                        </div>
-                        <div className="link">
-                            <img src="./src/assets/images/dining.jpg" alt="Admission." />
-                            <h4>Dining</h4>
-                        </div>
+            </section>
+            <section className="conservation-section">
+                <h4>Memphis Zoo Conservation</h4>
+                <h2>Secure the Future of a World of Wildlife</h2>
+                <p className="headline">We aim to improve the security and stability of animal populations - both in the wild and in captivity.</p>
+                <IconConservation />
+            </section>
+            <section className="initiatives-section">
+                <div className="bg-lion" />
+                <div className="initiatives-section--photos">
+                    <img src="./src/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
+                    <img src="./src/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
+                    <img src="./src/assets/images/memzoo_penguin.jpg" alt="Penguins Flapping." />
                 </div>
-            </div>
-        </section>
-        <section className="conservation-section">
-            <h4>Memphis Zoo Conservation</h4>
-            <h2>Secure the Future of a World of Wildlife</h2>
-            <p className="headline">We aim to improve the security and stability of animal populations - both in the wild and in captivity.</p>
-            <IconConservation />
-        </section>
-        <section className="initiatives-section">
-            <div className="bg-lion" />
-            <div className="initiatives-section--photos">
-                <img src="./src/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
-                <img src="./src/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
-                <img src="./src/assets/images/memzoo_penguin.jpg" alt="Penguins Flapping." />
-            </div>
-            <div className="initiatives-section--text">
-                <h4>Conservation</h4>
-                <h2>Memphis Zoo Initiatives</h2>
-                <p>Our conservation projects apply the tools and knowledge gained from scientific research to solve real-life problems threatening the world's wildlife.</p>
-                <a href="https://www.memphiszoo.org/conservation" className="learn-more__animated">Discover Our Conservation Efforts <FontAwesomeIcon icon={faArrowRightLong} /></a>
-            </div>
-        </section>
-        <section className="saving-wildlife-section">
-            <h2>Creating Adventures. Saving Wildlife.</h2>
-            <a href="https://www.memphiszoo.org/plan-your-visit" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
-        </section>
-        {/* <IconPattern className="bg-pattern" /> */}
-    </main>
-  )
+                <div className="initiatives-section--text">
+                    <h4>Conservation</h4>
+                    <h2>Memphis Zoo Initiatives</h2>
+                    <p>Our conservation projects apply the tools and knowledge gained from scientific research to solve real-life problems threatening the world's wildlife.</p>
+                    <a href="https://www.memphiszoo.org/conservation" className="learn-more__animated">Discover Our Conservation Efforts <FontAwesomeIcon icon={faArrowRightLong} /></a>
+                </div>
+            </section>
+            <section className="saving-wildlife-section">
+                <h2>Creating Adventures. Saving Wildlife.</h2>
+                <a href="https://www.memphiszoo.org/plan-your-visit" className="learn-more__animated"> Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} /></a>
+            </section>
+        </main>
+    )
 }
 
 export default HomeView;
