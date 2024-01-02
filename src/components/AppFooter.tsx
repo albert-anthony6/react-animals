@@ -1,5 +1,6 @@
 import './AppFooter.scss';
 import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react';
+import Collapsible from 'react-collapsible';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobile, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faTwitter, faYoutube, faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -95,8 +96,41 @@ function AppFooter() {
             </div>
           </div>
           <button type="button" className="learn-more__animated">Submit <FontAwesomeIcon icon={faArrowRightLong} /></button>
-          <span className="disclaimer">Disclaimer and Compliance</span>
+          <Collapsible
+              trigger="Disclaimer and Compliance"
+              triggerOpenedClassName="disclaimer"
+              contentInnerClassName="disclaimer--content"
+              className="disclaimer"
+          >
+            <p>
+              Join the Memphis Zoo Texting Club to stay informed on events, new attractions, and exciting things coming at the zoo. 
+              When something urgent happens, you’ll be one of the first to know. 
+              Our mission is Creating Adventures and Saving Wildlife, and we can’t wait to share what’s in store. 
+              Message and data rates may apply. Up to 10 msgs/month. Text HELP to 76068 for help. 
+              Text STOP to 76068 to cancel. For terms: (<a href="https://www.memphiszoo.org/help-rules">https://www.memphiszoo.org/help-rules</a>). 
+              For privacy policy: (<a href="https://www.memphiszoo.org/privacy-policy">https://www.memphiszoo.org/privacy-policy</a>). 
+              Disclaimer: Users can receive up to ten text messages per month and carriers are not liable for delayed or undelivered messages.
+            </p>
+          </Collapsible>
         </form>
+        <div className="sponsors">
+          <a href="https://www.aza.org/">
+            <img src="./src/assets/images/aza.png" alt="Association of Zoos & Aquariums." />
+          </a>
+          <a href="https://www.waza.org/">
+            <img src="./src/assets/images/waza.webp" alt="World Association of Zoos and Aquariums." />
+          </a>
+          <a href="https://overtonpark.org/">
+            <img src="./src/assets/images/overton.png" alt="Overton Park Conservancy." />
+          </a>
+          <a href="https://polarbearsinternational.org/">
+            <img src="./src/assets/images/pbi.png" alt="Polar Bears International." />
+          </a>
+        </div>
+        <h6>
+          Memphis Zoo © 2024 • All Rights Reserved • <a href="#">Sitemap</a> • 
+          <a href="#"> Developed by Albert</a>
+        </h6>
     </footer>
   )
 }

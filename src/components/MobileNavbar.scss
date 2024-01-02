@@ -27,6 +27,11 @@
         @include font-size(14, bold, capitalize, normal, 20);
         cursor: pointer;
 
+        &:first-of-type {
+            opacity: 0.5;
+            cursor: default;
+        }
+
         svg {
             font-size: rem(16);
             color: $darker-green;

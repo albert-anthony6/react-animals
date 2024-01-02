@@ -236,9 +236,11 @@ function HomeView() {
                 </div>
             </section>
             <section className={hasSectionShown["conservation"] ? "conservation-section fade-in" : "conservation-section hide"}>
-                <h4>Memphis Zoo Conservation</h4>
-                <h2>Secure the Future of a World of Wildlife</h2>
-                <p className="headline">We aim to improve the security and stability of animal populations - both in the wild and in captivity.</p>
+                <div className="conservation-section--text">
+                    <h4>Memphis Zoo Conservation</h4>
+                    <h2>Secure the Future of a World of Wildlife</h2>
+                    <p className="headline">We aim to improve the security and stability of animal populations - both in the wild and in captivity.</p>
+                </div>
                 {hasSectionShown["conservation"] && <IconConservation />}
             </section>
             <section className="initiatives-section">

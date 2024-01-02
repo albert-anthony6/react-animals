@@ -43,13 +43,21 @@ h1 {
 }
 
 h2 {
-    @include font-size(70, 700, uppercase, -1, 65);
+    @include font-size(50, 700, uppercase, -1, 45);
     font-family: $secondary-font-stack;
     margin: 5px 0 20px;
+
+    @include bp-custom-min(850) {
+        @include font-size(70, 700, uppercase, -1, 65);
+    }
 }
 
 h4 {
     @include font-size(24, 700, uppercase, -0.5, 25);
+}
+
+h6 {
+    @include font-size(14, 300, none, 0, 20);
 }
 
 ul {

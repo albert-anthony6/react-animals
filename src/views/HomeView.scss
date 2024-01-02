@@ -56,12 +56,13 @@
                 }
     
                 h4 {
-                    @include font-size(35, bold, uppercase, -0.5, 30);
-                    font-size: em(40, 10);
+                    @include font-size(35, bold, uppercase, -0.5, 20);
+                    font-size: em(60, 10);
                     color: $lighter-green;
+                    padding-right: 5px;
     
                     @include bp-xs-phone {
-                        font-size: em(35, 10);
+                        font-size: em(45, 10);
                     }
                     
                     @include bp-md-tablet {
@@ -191,8 +192,12 @@
         }
 
         &--text {
-            max-width: 54%;
+            width: 80%;
             margin: 0 auto 20px;
+            
+            @include bp-custom-min(1080) {
+                width: 54%;
+            }
         }
 
         .carousel {
@@ -214,6 +219,7 @@
                     border-radius: 50%;
                     background-color: $dark-orange;
                     transition: all 0.3s ease;
+                    cursor: pointer;
 
                     &:hover {
                         background-color: $navy;
@@ -288,12 +294,16 @@
 
                 .learn-more__animated {
                     position: absolute;
-                    bottom: 20px;
+                    bottom: 50px;
                     left: 50%;
                     transform: translateX(-50%);
                     white-space: nowrap;
                     opacity: 0;
                     transition: all 0.3s ease;
+
+                    @include bp-custom-min(601) {
+                        bottom: 20px;
+                    }
 
                     &::before {
                         background-color: $dark-orange;
@@ -333,14 +343,28 @@
 
         .adventure-video {
             position: absolute;
-            width: 71.5%;
-            height: 100%;
+            width: 80%;
+            height: 45%;
             top: -80px;
             right: 3%;
             opacity: 0.20;
             mix-blend-mode: luminosity;
             z-index: -1;
+            
+            @include bp-sm-phone-landscape {
+                height: 25%;
+            }
+            
+            @include bp-custom-min(850) {
+                width: 55%;
+                height: 17%;
+            }
 
+            @include bp-custom-min(1080) {
+                width: 71.5%;
+                height: 100%;
+            }
+            
             video {
                 display: block;
                 width: 100%;
@@ -365,8 +389,12 @@
         }
 
         .headline {
+            width: 90%;
+            margin: 0 auto;
+
             @include bp-custom-min(1080) {
                 width: 70%;
+                margin: unset;
             }
         }
 
@@ -384,11 +412,23 @@
         }
 
         &--description {
-            width: 100%;
+            width: 90%;
             padding-top: 25px;
+            margin: 0 auto;
             
             @include bp-custom-min(1080) {
                 width: 33%;
+                margin: unset;
+            }
+        }
+
+        h4,
+        h2 {
+            width: 90%;
+            margin: 0 auto;
+            
+            @include bp-custom-min(1080) {
+                width: auto;
             }
         }
 
@@ -482,15 +522,27 @@
         text-align: center;
         padding-bottom: 100px;
 
+        &--text {
+            width: 80%;
+            margin: 0 auto;
+            
+            @include bp-custom-min(1080) {
+                width: 54%;
+            }
+        }
+
         svg {
             position: absolute;
+            width: 100%;
             top: 65px;
             left: 0;
+            min-height: 280px;
             fill: none;
             stroke: #000;
             stroke-width: 2;
             transition: all 3s ease 0s;
             opacity: 0.2;
+            z-index: -1;
             
             path{
                 stroke-miterlimit: 10;
@@ -514,8 +566,13 @@
         position: relative;
         display: flex;
         align-items: center;
+        flex-direction: column-reverse;
         margin-top: 260px;
-        padding: 0 68px;
+        
+        @include bp-custom-min(1080) {
+            padding: 0 68px;
+            flex-direction: row;
+        }
 
         &::before {
             content: "";
@@ -531,12 +588,12 @@
 
         .bg-lion {
             position: absolute;
-            width: 51vw;
+            width: 65%;
             height: 70%;
-            top: -80px;
-            left: 33%;
+            top: -300px;
+            left: 10%;
             background-image: url("../assets/images/lion.jpg");
-            background-size: cover;
+            background-size: contain;
             background-position: center center;
             background-repeat: no-repeat;
             transition: all .6s ease 0s;
@@ -544,11 +601,28 @@
             opacity: 0.25;
             overflow: hidden;
             z-index: -1;
+            
+            @include bp-custom-min(1080) {
+                width: 51vw;
+                top: -80px;
+                left: 33%;
+                background-size: cover;
+            }
+        }
+
+        &--photos,
+        &--text {
+            width: 90%;
+            margin: 0 auto 40px auto;
+
+            @include bp-custom-min(1080) {
+                width: 50%;
+                margin: unset;
+            }
         }
 
         &--photos {
             display: flex;
-            width: 50%;
             height: 100%;
             flex-wrap: wrap;
             
@@ -575,20 +649,28 @@
         }
 
         &--text {
-            width: 50%;
-
             p,
             .learn-more__animated {
-                margin-left: 40px;
-            }
+                margin-left: 0;
 
+                @include bp-sm-phone-landscape {
+                    margin-left: 40px;
+                }
+            }
+            
             p {
-                width: 90%;
+                width: calc(90% + 40px);
                 margin-top: 40px;
+                padding-right: 15px;
+
+                @include bp-custom-min(1080) {
+                    width: 90%;
+                }
             }
             
             .learn-more__animated {
                 margin-top: 20px;
+                white-space: nowrap;
 
                 &:hover {
                     &::before {
@@ -625,8 +707,16 @@
         }
 
         h2 {
-            max-width: 750px;
+            max-width: 300px;
             margin: 0 auto;
+            
+            @include bp-custom-min(480) {
+                max-width: 450px;
+            }
+
+            @include bp-custom-min(850) {
+                max-width: 750px;
+            }
 
             @include bp-custom-min(2120) {
                 max-width: fit-content;
