@@ -194,6 +194,7 @@
                     padding: 5px 0 10px;
 
                     @include bp-custom-min(1080) {
+                        width: auto;
                         text-align: left;
                         background-color: transparent;
                         border-radius: 0;
