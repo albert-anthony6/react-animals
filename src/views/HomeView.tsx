@@ -216,7 +216,7 @@ function HomeView() {
                     </div>
                     <div className={hasSectionShown["adventures"] ? "adventures-section--links fade-in" : "adventures-section--links hide"}>
                             <div className="link">
-                                <img src="src/assets/images/admission.webp" alt="Admission." />
+                                <img src="./src/assets/images/admission.webp" alt="Admission." />
                                 <h4>Admission</h4>
                             </div>
                             <div className="link">
