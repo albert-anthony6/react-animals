@@ -24,7 +24,7 @@ function MenuModal() {
                     {
                         screenSize.width >= 1080 ? (
                             <div>
-                                <img src="src/assets/images/zoo_lights.jpg" alt="Zoo Lights." />
+                                <img src="/assets/images/zoo_lights.jpg" alt="Zoo Lights." />
                                 <h4>Zoo Lights</h4>
                                 <h5>Select Nights November 24-January 6 | 5:30-9:30pm</h5>
                                 <p>

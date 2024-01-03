@@ -395,6 +395,11 @@
 
                     .date {
                         margin-right: 40px;
+                        margin-bottom: 10px;
+
+                        @include bp-custom-min(1080) {
+                            margin-bottom: unset;
+                        }
                     }
 
                     &__hours {

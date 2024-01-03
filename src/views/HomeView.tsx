@@ -25,6 +25,7 @@ const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonG
   
 
 function HomeView() {
+    const isLandscapeMode = window.matchMedia('(max-width:999px) and (orientation:landscape)').matches;
     const scrollRef = useRef<HTMLElement>(null);
     const [hasSectionShown, setHasSectionShown] = useState({
         "hero": false,
@@ -158,7 +159,9 @@ function HomeView() {
     }, [])
     return (
         <main ref={scrollRef} className="home-view">
-            <section className={hasSectionShown["hero"] ? 'hero-section show-animation' : 'hero-section hide'}>
+            <section 
+                className={hasSectionShown["hero"] || isLandscapeMode ? 'hero-section show-animation' : 'hero-section hide'}
+            >
                 <div className="hero-banner">
                     <div className="hero-text">
                         <h4>Explore a Wonderful World of</h4>

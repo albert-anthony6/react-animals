@@ -27,13 +27,16 @@
         }
         
         .hero-banner {
-            padding: 315px 0 0 30px;
-    
+            position: relative;
+            
             @include bp-md-tablet {
                 padding-left: 80px;
             }
-    
+            
             .hero-text {
+                position: absolute;
+                top: 37%;
+                left: 4.8%;
                 font-size: rem(3.5);
                 text-align: left;
                 width: fit-content;
