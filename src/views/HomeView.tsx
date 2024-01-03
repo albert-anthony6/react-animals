@@ -165,7 +165,7 @@ function HomeView() {
                         <h1>Wildlife</h1>
                     </div>
                     <div className="hero-video">
-                        <video loop autoPlay muted>
+                        <video loop autoPlay muted playsInline>
                             <source src={ HeroVideo } type="video/mp4" />
                             Your browser does not support the video tag. It is recommended to upgrade your browser.
                         </video>
@@ -201,7 +201,7 @@ function HomeView() {
             </section>
             <section className="adventures-section">
                 <div className="adventure-video">
-                    <video loop autoPlay muted>
+                    <video loop autoPlay muted playsInline>
                         <source src={ HeroVideo } type="video/mp4" />
                         Your browser does not support the video tag. It is recommended to upgrade your browser.
                     </video>
