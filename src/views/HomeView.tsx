@@ -144,7 +144,6 @@ function HomeView() {
         
                 if (top >= offset && top < offset + height) {
                     const sectionName = sec.className.substring(0, sec.className.indexOf("-section"));
-                    console.log(sectionName);
                     setHasSectionShown((prevState) => ({...prevState, [sectionName]: true}));
                 }
             });
