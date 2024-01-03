@@ -41,7 +41,7 @@ function MenuModal() {
                                 triggerDisabled={false}
                                 open={false}
                             >
-                                <img src="src/assets/images/zoo_lights.jpg" alt="Zoo Lights." />
+                                <img src="/assets/images/zoo_lights.jpg" alt="Zoo Lights." />
                                 <h4>Zoo Lights</h4>
                                 <div className="event-description">
                                     <h5>Select Nights November 24-January 6 | 5:30-9:30pm</h5>

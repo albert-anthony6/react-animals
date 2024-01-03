@@ -9,11 +9,11 @@ function AppFooter() {
   return (
     <footer className="app-footer">
         <div className="app-footer--photos">
-            <img src="./src/assets/images/treefrog.png" alt="Green Tree Frong." />
-            <img src="./src/assets/images/tiger.jpg" alt="Siberian Tiger." />
-            <img src="./src/assets/images/elephant.jpg" alt="Elephant." />
-            <img src="./src/assets/images/bear.webp" alt="Brown Bear." />
-            <img src="./src/assets/images/hummingbird.jpg" alt="Hummingbird." />
+            <img src="/assets/images/treefrog.png" alt="Green Tree Frong." />
+            <img src="/assets/images/tiger.jpg" alt="Siberian Tiger." />
+            <img src="/assets/images/elephant.jpg" alt="Elephant." />
+            <img src="/assets/images/bear.webp" alt="Brown Bear." />
+            <img src="/assets/images/hummingbird.jpg" alt="Hummingbird." />
         </div>
         <div className="top-links">
           <ul className="pages">
@@ -115,16 +115,16 @@ function AppFooter() {
         </form>
         <div className="sponsors">
           <a href="https://www.aza.org/">
-            <img src="./src/assets/images/aza.png" alt="Association of Zoos & Aquariums." />
+            <img src="/assets/images/aza.png" alt="Association of Zoos & Aquariums." />
           </a>
           <a href="https://www.waza.org/">
-            <img src="./src/assets/images/waza.webp" alt="World Association of Zoos and Aquariums." />
+            <img src="/assets/images/waza.webp" alt="World Association of Zoos and Aquariums." />
           </a>
           <a href="https://overtonpark.org/">
-            <img src="./src/assets/images/overton.png" alt="Overton Park Conservancy." />
+            <img src="/assets/images/overton.png" alt="Overton Park Conservancy." />
           </a>
           <a href="https://polarbearsinternational.org/">
-            <img src="./src/assets/images/pbi.png" alt="Polar Bears International." />
+            <img src="/assets/images/pbi.png" alt="Polar Bears International." />
           </a>
         </div>
         <h6>

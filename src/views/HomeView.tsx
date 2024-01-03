@@ -192,7 +192,7 @@ function HomeView() {
                 >
                     {slides.map((slide, idx) => (
                         <div className="slide" key={`${idx}-${slide.img}`}>
-                            <img src={`./src/assets/images/carousel-images/${slide.img}`} />
+                            <img src={`/assets/images/carousel-images/${slide.img}`} />
                             <h4 className="slide--name">{ slide.name }</h4>
                             <a href={slide.link} className="learn-more__animated"> Learn More <FontAwesomeIcon icon={faArrowRightLong} /></a>
                         </div>
@@ -216,19 +216,19 @@ function HomeView() {
                     </div>
                     <div className={hasSectionShown["adventures"] ? "adventures-section--links fade-in" : "adventures-section--links hide"}>
                             <div className="link">
-                                <img src="./src/assets/images/admission.webp" alt="Admission." />
+                                <img src="/assets/images/admission.webp" alt="Admission." />
                                 <h4>Admission</h4>
                             </div>
                             <div className="link">
-                                <img src="./src/assets/images/seasonal-experiences.webp" alt="Admission." />
+                                <img src="/assets/images/seasonal-experiences.webp" alt="Admission." />
                                 <h4>Seasonal Experiences</h4>
                             </div>
                             <div className="link">
-                                <img src="./src/assets/images/special-events.jpg" alt="Admission." />
+                                <img src="/assets/images/special-events.jpg" alt="Admission." />
                                 <h4>Special Events</h4>
                             </div>
                             <div className="link">
-                                <img src="./src/assets/images/dining.jpg" alt="Admission." />
+                                <img src="/assets/images/dining.jpg" alt="Admission." />
                                 <h4>Dining</h4>
                             </div>
                     </div>
@@ -245,9 +245,9 @@ function HomeView() {
             <section className="initiatives-section">
                 <div className="bg-lion" />
                 <div className={hasSectionShown["initiatives"] ? "initiatives-section--photos fade-in" : "initiatives-section--photos hide"}>
-                    <img src="./src/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
-                    <img src="./src/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
-                    <img src="./src/assets/images/memzoo_penguin.jpg" alt="Penguins Flapping." />
+                    <img src="/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
+                    <img src="/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
+                    <img src="/assets/images/memzoo_penguin.jpg" alt="Penguins Flapping." />
                 </div>
                 <div className="initiatives-section--text">
                     <h4>Conservation</h4>
