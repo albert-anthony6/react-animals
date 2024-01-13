@@ -129,7 +129,7 @@ function AppFooter() {
         </div>
         <h6>
           Memphis Zoo © 2024 • All Rights Reserved • <a href="#">Sitemap</a> • 
-          <a href="#"> Developed by Albert</a>
+          <a href="https://albertvaldes.netlify.app/" target="_blank"> Developed by Albert</a>
         </h6>
     </footer>
   )

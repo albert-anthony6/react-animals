@@ -15,7 +15,11 @@ function App() {
     {
       path: "/",
       element: <HomeView />
-    }
+    },
+    {
+      path: "*",
+      element: <HomeView />
+    },
   ])
 
   return (
