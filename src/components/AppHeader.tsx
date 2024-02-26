@@ -1,12 +1,12 @@
-import './AppHeader.scss';
-import { Link } from 'react-router-dom';
-import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import './AppHeader.scss'
+import { Link } from 'react-router-dom'
+import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
-  activeModal: boolean;
-  setActiveModal: React.Dispatch<React.SetStateAction<boolean>>;
+  activeModal: boolean
+  setActiveModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function AppHeader({ activeModal, setActiveModal }: Props) {
@@ -85,7 +85,7 @@ function AppHeader({ activeModal, setActiveModal }: Props) {
             </ul>
           </li>
           <li onClick={() => setActiveModal(!activeModal)}>
-            <div className={activeModal ? "modal-button active-modal" : "modal-button"}>
+            <div className={activeModal ? 'modal-button active-modal' : 'modal-button'}>
               Plan Your Adventure
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
@@ -96,4 +96,4 @@ function AppHeader({ activeModal, setActiveModal }: Props) {
   )
 }
 
-export default AppHeader;
+export default AppHeader

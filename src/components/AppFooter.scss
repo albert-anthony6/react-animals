@@ -1,359 +1,362 @@
 .app-footer {
-    position: relative;
-    padding-bottom: 80px;
-    background-color: rgba($darkest-blue, 0.9);
-    background-image: linear-gradient(0deg, rgba(58, 181, 247, 0.06) 0%, rgba(25, 86, 133, 0.3) 50%, #051720 100%);
+  position: relative;
+  padding-bottom: 80px;
+  background-color: rgba($darkest-blue, 0.9);
+  background-image: linear-gradient(
+    0deg,
+    rgba(58, 181, 247, 0.06) 0%,
+    rgba(25, 86, 133, 0.3) 50%,
+    #051720 100%
+  );
+
+  @include bp-custom-min(1080) {
+    padding-bottom: 20px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $navy;
+    background-image: url('/src/assets/images/memzoo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &--photos {
+    display: flex;
+    margin-top: 80px;
+
+    & :nth-child(2n + 1) {
+      margin-top: -60px;
+    }
+
+    & :nth-child(2n) {
+      margin-top: -30px;
+    }
+
+    & :nth-child(4),
+    & :nth-child(5) {
+      display: none;
+
+      @include bp-custom-min(1080) {
+        display: block;
+      }
+    }
+
+    img {
+      width: 33.3%;
+      height: 34vw;
+      object-fit: cover;
+
+      @include bp-custom-min(1080) {
+        width: 20%;
+        height: 20vw;
+      }
+    }
+  }
+
+  .top-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 0 0;
+    flex-direction: column;
+
+    @include bp-custom-min(2000) {
+      max-width: 2000px;
+      margin: 0 auto;
+    }
 
     @include bp-custom-min(1080) {
-        padding-bottom: 20px;
+      padding: 60px 218px 0;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      text-align: left;
     }
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
+    .pages a,
+    .contact a {
+      @include font-size(16, 700, uppercase, normal, 20);
+    }
+
+    a {
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $light-yellow;
+      }
+    }
+
+    .pages {
+      display: flex;
+      width: 100vw;
+      margin-bottom: 30px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20px;
+
+      @include bp-custom-min(1080) {
+        width: auto;
+        padding: unset;
+      }
+
+      a {
+        margin: 0 10px;
+      }
+
+      @include bp-custom-min(1080) {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 0;
+      }
+    }
+
+    .media {
+      text-align: center;
+
+      @include bp-custom-min(1080) {
+        margin-left: 50px;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .socials ul {
+        font-size: rem(30);
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+          position: relative;
+
+          &:last-child {
+            &::after {
+              content: '';
+              position: absolute;
+              top: 5px;
+              left: -7px;
+              width: 1px;
+              height: 70%;
+              background-color: $lightest-neutral;
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      text-align: center;
+      margin-right: -20px;
+
+      @include bp-xl-desktop {
+        margin-right: unset;
+      }
+
+      @include bp-custom-min(1080) {
+        text-align: right;
+      }
+
+      h5 {
+        max-width: 220px;
+
+        &:not(:first-of-type) {
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+
+  form {
+    position: relative;
+    width: 80%;
+    margin: 40px auto 0;
+    padding-bottom: 20px;
+    text-align: center;
+    max-width: 1000px;
+
+    @include bp-custom-min(1080) {
+      width: 35.5%;
+    }
+
+    .form-heading {
+      @include font-size(24, 300, uppercase, normal, 30);
+      font-family: $secondary-font-stack;
+    }
+
+    input {
+      background-color: #2f4957;
+    }
+
+    .search-container:first-of-type {
+      margin: 17px 0 30px;
+
+      input {
+        font-weight: 300;
+      }
+    }
+
+    .search-container:nth-child(3n + 1) {
+      width: 100%;
+      margin: 6px auto 20px;
+
+      @include bp-sm-phone-landscape {
+        width: 95%;
+      }
+
+      @include bp-custom-min(850) {
+        width: 50%;
+      }
+
+      @include bp-custom-min(1080) {
+        width: 41%;
+      }
+    }
+
+    .checkboxes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      @include bp-custom-min(850) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .form-checkbox {
+        width: 100%;
+        text-align: left;
+        margin-left: 8%;
+        padding-right: 20px;
+
+        @include bp-custom-min(850) {
+          width: 40%;
+          margin-left: unset;
+          padding-right: unset;
+        }
+      }
+    }
+
+    .learn-more__animated {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      width: 115px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin: 40px auto 0;
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &::before {
+        width: 35%;
+        background-color: $dark-orange;
+      }
+    }
+
+    .disclaimer {
+      display: block;
+      width: 200px;
+      font-weight: 300;
+      margin: 79px auto 0;
+      text-decoration: underline;
+      color: $light-yellow;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $dark-orange;
+      }
+
+      &--content {
+        padding: 10px;
+        background-color: rgba($darkest-neutral, 0.1);
+        margin: 0 auto;
+        width: 100%;
+        max-width: 500px;
+
+        p {
+          width: inherit;
+        }
+
+        a {
+          word-wrap: break-word;
+          font-weight: bold;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $light-yellow;
+          }
+        }
+      }
+    }
+  }
+
+  .sponsors {
+    display: flex;
+    width: 100%;
+    margin: 69px auto 0;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      width: 50px;
+      margin: 0 10px;
+
+      @include bp-sm-phone-landscape {
+        margin: 0 20px;
+      }
+
+      &:nth-child(1) {
+        width: 156px;
+      }
+
+      &:nth-child(4) {
+        width: 66px;
+      }
+
+      img {
         width: 100%;
         height: 100%;
-        background-color: $navy;
-        background-image: url("/src/assets/images/memzoo.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: -1;
+      }
+    }
+  }
+
+  h6 {
+    text-align: center;
+    margin-top: 40px;
+    color: $disabled;
+
+    a {
+      font-weight: bold;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $light-yellow;
+      }
     }
 
-    &--photos {
-        display: flex;
-        margin-top: 80px;
-
-        & :nth-child(2n + 1) {
-            margin-top: -60px;
-        }
-
-        & :nth-child(2n) {
-            margin-top: -30px;
-        }
-
-        & :nth-child(4),
-        & :nth-child(5) {
-            display: none;
-
-            @include bp-custom-min(1080) {
-                display: block;
-            }
-        }
-
-        img {
-            width: 33.3%;
-            height: 34vw;
-            object-fit: cover;
-            
-            @include bp-custom-min(1080) {
-                width: 20%;
-                height: 20vw;
-            }
-        }
+    a:last-of-type {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      font-weight: bold;
     }
-
-    .top-links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 60px 0 0;
-        flex-direction: column;
-
-        @include bp-custom-min(2000) {
-            max-width: 2000px;
-            margin: 0 auto;
-        }
-        
-        @include bp-custom-min(1080) {
-            padding: 60px 218px 0;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
-            text-align: left
-        }
-
-        .pages a,
-        .contact a {
-            @include font-size(16, 700, uppercase, normal, 20);
-        }
-
-        a {
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: $light-yellow;
-            }
-        }
-
-        .pages {
-            display: flex;
-            width: 100vw;
-            margin-bottom: 30px;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0 20px;
-            
-            @include bp-custom-min(1080) {
-                width: auto;
-                padding: unset;
-            }
-
-            a {
-                margin: 0 10px;
-            }
-
-            @include bp-custom-min(1080) {
-                flex-direction: column;
-                justify-content: flex-start;
-                margin-bottom: 0;
-            }
-        }
-
-        .media {
-            text-align: center;
-
-            @include bp-custom-min(1080) {
-                margin-left: 50px;
-            }
-
-            .logo {
-                width: 120px;
-                height: 120px;
-            }
-
-            .socials ul {
-                font-size: rem(30);
-                width: 200px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                li {
-                    position: relative;
-
-                    &:last-child {
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            top: 5px;
-                            left: -7px;
-                            width: 1px;
-                            height: 70%;
-                            background-color: $lightest-neutral;
-                        }
-                    }
-                }
-            }
-        }
-
-        .contact {
-            text-align: center;
-            margin-right: -20px;
-
-            @include bp-xl-desktop {
-                margin-right: unset;
-            }
-            
-            @include bp-custom-min(1080) {
-                text-align: right;
-            }
-
-            h5 {
-                max-width: 220px;
-
-                &:not(:first-of-type) {
-                    margin-top: 13px;
-                }
-            }
-
-        }
-    }
-
-    form {
-        position: relative;
-        width: 80%;
-        margin: 40px auto 0;
-        padding-bottom: 20px;
-        text-align: center;
-        max-width: 1000px;
-        
-        @include bp-custom-min(1080) {
-            width: 35.5%;
-        }
-
-        .form-heading {
-            @include font-size(24, 300, uppercase, normal, 30);
-            font-family: $secondary-font-stack;
-        }
-
-        input {
-            background-color: #2F4957;
-        }
-
-        .search-container:first-of-type {
-            margin: 17px 0 30px;
-            
-            input {
-                font-weight: 300;
-            }
-        }
-
-        .search-container:nth-child(3n + 1) {
-            width: 100%;
-            margin: 6px auto 20px;
-
-            @include bp-sm-phone-landscape {
-                width: 95%;
-            }
-
-            @include bp-custom-min(850) {
-                width: 50%;
-            }
-            
-            @include bp-custom-min(1080) {
-                width: 41%;
-            }
-        }
-
-        .checkboxes {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex-wrap: wrap;
-            
-            @include bp-custom-min(850) {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-
-            .form-checkbox {
-                width: 100%;
-                text-align: left;
-                margin-left: 8%;
-                padding-right: 20px;
-
-                @include bp-custom-min(850) {
-                    width: 40%;
-                    margin-left: unset;
-                    padding-right: unset;
-                }
-            }
-        }
-
-        .learn-more__animated {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: 115px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            margin: 40px auto 0;
-
-            &:hover {
-                &::before {
-                    width: 100%;
-                }
-            }
-
-            &::before {
-                width: 35%;
-                background-color: $dark-orange;
-            }
-        }
-
-        .disclaimer {
-            display: block;
-            width: 200px;
-            font-weight: 300;
-            margin: 79px auto 0;
-            text-decoration: underline;
-            color: $light-yellow;
-            cursor: pointer;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: $dark-orange;
-            }
-
-            &--content {
-                padding: 10px;
-                background-color: rgba($darkest-neutral, 0.1);
-                margin: 0 auto;
-                width: 100%;
-                max-width: 500px;
-
-                p {
-                    width: inherit;
-                }
-
-
-                a {
-                    word-wrap: break-word;
-                    font-weight: bold;
-                    transition: color 0.3s ease;
-
-                    &:hover {
-                        color: $light-yellow;
-                    }
-                }
-            }
-        }
-    }
-
-    .sponsors {
-        display: flex;
-        width: 100%;
-        margin: 69px auto 0;
-        align-items: center;
-        justify-content: center;
-
-        a {
-            width: 50px;
-            margin: 0 10px;
-            
-            @include bp-sm-phone-landscape {
-                margin: 0 20px;
-            }
-            
-            &:nth-child(1) {
-                width: 156px;
-            }
-
-            &:nth-child(4) {
-                width: 66px;
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-
-    h6 {
-        text-align: center;
-        margin-top: 40px;
-        color: $disabled;
-
-        a {
-            font-weight: bold;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: $light-yellow;
-            }
-        }
-
-        a:last-of-type {
-            display: block;
-            width: fit-content;
-            margin: 0 auto;
-            font-weight: bold;
-        }
-    }
+  }
 }

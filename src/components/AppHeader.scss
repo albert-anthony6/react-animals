@@ -1,152 +1,152 @@
 .app-header {
-    padding: 20px 37px;
-    background-color: transparent;
-    text-transform: uppercase;
+  padding: 20px 37px;
+  background-color: transparent;
+  text-transform: uppercase;
 
-    .logo {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        line-height: 0;
-        transition: transform 0.3s ease;
-        z-index: 999;
+  .logo {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 0;
+    transition: transform 0.3s ease;
+    z-index: 999;
 
-        &::before {
-            content: "";
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 0 0 50% 50%;
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            z-index: -1;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 0 0 50% 50%;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      z-index: -1;
 
-            @include bp-custom-min(1080) {
-                display: none;
-            }
-        }
-        
+      @include bp-custom-min(1080) {
+        display: none;
+      }
+    }
+
+    @include bp-custom-min(1080) {
+      left: auto;
+      transform: none;
+    }
+
+    & svg {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+
         @include bp-custom-min(1080) {
-            left: auto;
-            transform: none;
+          transform: scale(1.1);
         }
-        
-        & svg {
-            transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  nav {
+    position: absolute;
+    top: 50px;
+    right: 250px;
+    display: none;
+
+    @include bp-custom-min(1080) {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      li {
+        position: relative;
+        font-size: rem(14);
+        font-weight: bold;
+        padding: 0 10px;
+        margin: 0 10px;
+        background: linear-gradient(to left, transparent 50%, #4884a2 50%);
+        transition: all 0.3s ease;
+        background-size: 205% 100%;
+        background-position: right bottom;
+
+        &:hover {
+          background-position: left bottom;
+
+          & .ul-child {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        &:not(:last-of-type) {
+          z-index: 1;
+        }
+
+        .submenu:hover {
+          & .ul-child--nested {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        .ul-child,
+        .ul-child--nested {
+          position: absolute;
+          display: block;
+          min-width: 180px;
+          padding: 10px 0 20px;
+          top: 40px;
+          left: 0;
+          background-color: $lightest-neutral;
+          color: $teal;
+          transition: all 0.2s ease;
+          opacity: 0;
+          visibility: hidden;
+
+          li {
+            margin-top: 10px;
 
             &:hover {
-                transform: scale(1.1);
-    
-                @include bp-custom-min(1080) {
-                    transform: scale(1.1);
-                }
+              color: $lightest-neutral;
             }
+          }
+
+          &--nested {
+            position: absolute;
+            min-width: 220px;
+            top: -20px;
+            left: 160px;
+          }
         }
+      }
     }
 
-    nav {
-        position: absolute;
-        top: 50px;
-        right: 250px;
-        display: none;
-        
-        @include bp-custom-min(1080) {
-            display: block;
-        }
+    .modal-button {
+      position: fixed;
+      top: 40px;
+      right: 50px;
+      padding: 8px 18px;
+      border: 2px solid $lightest-neutral;
+      border-radius: 20px;
+      margin-left: 18px;
+      cursor: pointer;
+      z-index: 999;
 
-        ul {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            
-            li {
-                position: relative;
-                font-size: rem(14);
-                font-weight: bold;
-                padding: 0 10px;
-                margin: 0 10px;
-                background: linear-gradient( to left, transparent 50%, #4884a2 50% );
-                transition: all 0.3s ease;
-                background-size: 205% 100%;
-                background-position: right bottom;
-    
-                &:hover {
-                    background-position: left bottom;
-    
-                    & .ul-child {
-                        visibility: visible;
-                        opacity: 1;
-                    }
-                }
-
-                &:not(:last-of-type) {
-                    z-index: 1;
-                }
-    
-                .submenu:hover {
-                    & .ul-child--nested {
-                        visibility: visible;
-                        opacity: 1;
-                    }
-                }
-    
-                .ul-child,
-                .ul-child--nested {
-                    position: absolute;
-                    display: block;
-                    min-width: 180px;
-                    padding: 10px 0 20px;
-                    top: 40px;
-                    left: 0;
-                    background-color: $lightest-neutral;
-                    color: $teal;
-                    transition: all 0.2s ease;
-                    opacity: 0;
-                    visibility: hidden;
-    
-                    li {
-                        margin-top: 10px;
-    
-                        &:hover {
-                            color: $lightest-neutral;
-                        }
-                    }
-    
-                    &--nested {
-                        position: absolute;
-                        min-width: 220px;
-                        top: -20px;
-                        left: 160px;
-                    }
-                }
-            }
-        }
-    
-        .modal-button {
-            position: fixed;
-            top: 40px;
-            right: 50px;
-            padding: 8px 18px;
-            border: 2px solid $lightest-neutral;
-            border-radius: 20px;
-            margin-left: 18px;
-            cursor: pointer;
-            z-index: 999;
-    
-            svg {
-                transition: all 0.2s ease;
-                margin-left: 10px;
-            }
-        }
-    
-        .active-modal {
-            svg {
-                transform: rotate(180deg);
-            }
-        }
+      svg {
+        transition: all 0.2s ease;
+        margin-left: 10px;
+      }
     }
+
+    .active-modal {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }

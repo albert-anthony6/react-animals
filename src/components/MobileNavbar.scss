@@ -1,42 +1,42 @@
 .mobile-navbar {
-    position: fixed;
-    display: flex;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  padding: 20px 40px;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  background-color: $navy;
+  z-index: 999;
+
+  @include bp-custom-min(1080) {
+    display: none;
+  }
+
+  .search-bar {
+    position: absolute;
     width: 100%;
     padding: 20px 40px;
-    justify-content: space-between;
-    align-items: center;
-    bottom: 0;
+    top: -75px;
     left: 0;
-    background-color: $navy;
-    z-index: 999;
+    background-color: $darkest-blue;
+  }
 
-    @include bp-custom-min(1080) {
-        display: none
+  .navbar-btn {
+    @include font-size(14, bold, capitalize, normal, 20);
+    cursor: pointer;
+
+    &:first-of-type {
+      opacity: 0.5;
+      cursor: default;
     }
 
-    .search-bar {
-        position: absolute;
-        width: 100%;
-        padding: 20px 40px;
-        top: -75px;
-        left: 0;
-        background-color: $darkest-blue;
+    svg {
+      font-size: rem(16);
+      color: $darker-green;
+      margin-left: 5px;
+      vertical-align: middle;
     }
-    
-    .navbar-btn {
-        @include font-size(14, bold, capitalize, normal, 20);
-        cursor: pointer;
-
-        &:first-of-type {
-            opacity: 0.5;
-            cursor: default;
-        }
-
-        svg {
-            font-size: rem(16);
-            color: $darker-green;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-    }
+  }
 }
