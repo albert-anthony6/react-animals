@@ -1,3 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 25">
-    <path class="cls-1" d="M150,25C100,25,100,0,75,0S50,25,0,25H150Z"></path>
+    <path d="M150,25 C100,25 105,0 75,0 S50,25 0,25 H150 Z" />
 </svg>
