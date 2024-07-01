@@ -1,5 +1,5 @@
-import './MenuModal.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './MenuModal.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowRightLong,
   faClock,
@@ -8,12 +8,12 @@ import {
   faSquareParking,
   faCircleQuestion,
   faUtensils
-} from '@fortawesome/free-solid-svg-icons'
-import Collapsible from 'react-collapsible'
-import useScreenSize from '../utilities/useScreenSize'
+} from '@fortawesome/free-solid-svg-icons';
+import Collapsible from 'react-collapsible';
+import useScreenSize from '../utilities/useScreenSize';
 
 function MenuModal() {
-  const screenSize = useScreenSize()
+  const screenSize = useScreenSize();
 
   return (
     <div className="menu-modal">
@@ -36,21 +36,21 @@ function MenuModal() {
               <h5>Select Nights November 24-January 6 | 5:30-9:30pm</h5>
               <p>
                 WHAT A BRIGHT TIME, IT'S THE RIGHT TIME... Get ready to immerse yourself in the
-                enchanting world of the holiday season as Truist Zoo Lights returns to Memphis Zoo.
-                With mesmerizing light displays, beloved classics, and exciting new additions, this
-                is the place to be for a merry and bright holiday experience. The iconic Light
-                Tunnel will once again brighten up the night with vibrant colors, while Magic Mr.
-                Nick will dazzle guests with exciting performances. Add even MORE magic with the
-                Gingerbread Forest, the beautiful Chinese lanterns, Alice's Tea Party, AND MUCH
-                MORE. If you're in the mood for some ice skating, lace up your skates and take a
-                spin on the rink. It's the perfect opportunity to showcase your skills. And who can
-                resist the delectable goodness of s'mores? Make your own gooey treats and relish the
-                sweet taste of the season. It pairs perfectly with a warm cup of hot chocolate. It's
-                not truly the holiday season without a visit to Santa Claus. Have your chance to
-                meet him and share your holiday wishes. Who knows, you might end up on the nice
+                enchanting world of the holiday season as Truist Zoo Lights returns to React
+                Adventures Zoo. With mesmerizing light displays, beloved classics, and exciting new
+                additions, this is the place to be for a merry and bright holiday experience. The
+                iconic Light Tunnel will once again brighten up the night with vibrant colors, while
+                Magic Mr. Nick will dazzle guests with exciting performances. Add even MORE magic
+                with the Gingerbread Forest, the beautiful Chinese lanterns, Alice's Tea Party, AND
+                MUCH MORE. If you're in the mood for some ice skating, lace up your skates and take
+                a spin on the rink. It's the perfect opportunity to showcase your skills. And who
+                can resist the delectable goodness of s'mores? Make your own gooey treats and relish
+                the sweet taste of the season. It pairs perfectly with a warm cup of hot chocolate.
+                It's not truly the holiday season without a visit to Santa Claus. Have your chance
+                to meet him and share your holiday wishes. Who knows, you might end up on the nice
                 list! Whether it's a romantic date night, a family outing, or a fun evening with
                 friends, Zoo Lights offers the perfect setting.
-                <a href="https://www.memphiszoo.org/zoo-lights" className="learn-more">
+                <a href="https://albertvaldes.netlify.app/" className="learn-more">
                   {' '}
                   Learn More <FontAwesomeIcon icon={faArrowRightLong} />
                 </a>
@@ -71,10 +71,10 @@ function MenuModal() {
                 <h5>Select Nights November 24-January 6 | 5:30-9:30pm</h5>
                 <p>
                   WHAT A BRIGHT TIME, IT'S THE RIGHT TIME... Get ready to immerse yourself in the
-                  enchanting world of the holiday season as Truist Zoo Lights returns to Memphis
-                  Zoo. With mesmerizing light displays, beloved classics, and exciting new
-                  additions, this is the place to be for a merry and bright holiday experience. The
-                  iconic Light Tunnel will once again brighten up the night with vibrant colors,
+                  enchanting world of the holiday season as Truist Zoo Lights returns to React
+                  Adventures Zoo. With mesmerizing light displays, beloved classics, and exciting
+                  new additions, this is the place to be for a merry and bright holiday experience.
+                  The iconic Light Tunnel will once again brighten up the night with vibrant colors,
                   while Magic Mr. Nick will dazzle guests with exciting performances. Add even MORE
                   magic with the Gingerbread Forest, the beautiful Chinese lanterns, Alice's Tea
                   Party, AND MUCH MORE. If you're in the mood for some ice skating, lace up your
@@ -85,7 +85,7 @@ function MenuModal() {
                   Claus. Have your chance to meet him and share your holiday wishes. Who knows, you
                   might end up on the nice list! Whether it's a romantic date night, a family
                   outing, or a fun evening with friends, Zoo Lights offers the perfect setting.
-                  <a href="https://www.memphiszoo.org/zoo-lights" className="learn-more">
+                  <a href="https://albertvaldes.netlify.app/" className="learn-more">
                     {' '}
                     Learn More <FontAwesomeIcon icon={faArrowRightLong} />
                   </a>
@@ -96,13 +96,13 @@ function MenuModal() {
           <h3>Book Your Adventure</h3>
           <ul className="flexed-ul">
             <li>
-              <a href="https://www.memphiszoo.org/host-an-event">
+              <a href="https://albertvaldes.netlify.app/">
                 <FontAwesomeIcon icon={faClock} />
                 Host an Event
               </a>
             </li>
             <li>
-              <a href="https://www.memphiszoo.org/field-trips">
+              <a href="https://albertvaldes.netlify.app/">
                 <FontAwesomeIcon icon={faCalendar} />
                 Field Trips
               </a>
@@ -127,19 +127,19 @@ function MenuModal() {
                 <h3>Adventure Guides</h3>
                 <ul>
                   <li>
-                    <a href="https://www.memphiszoo.org/discover#zoo-map">
+                    <a href="https://albertvaldes.netlify.app/">
                       What Can I See in 2 Hours?
                       <FontAwesomeIcon icon={faArrowRightLong} />
                     </a>
                   </li>
                   <li>
-                    <a href="https://tickets.memphiszoo.org/WebStore/shop/viewitems.aspx?CG=95&C=97">
+                    <a href="https://albertvaldes.netlify.app/">
                       Purchase Tickets
                       <FontAwesomeIcon icon={faArrowRightLong} />
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.memphiszoo.org/dining">
+                    <a href="https://albertvaldes.netlify.app/">
                       Where to Eat
                       <FontAwesomeIcon icon={faArrowRightLong} />
                     </a>
@@ -150,31 +150,31 @@ function MenuModal() {
                 <h3>Know Before You Go</h3>
                 <ul className="flexed-ul">
                   <li>
-                    <a href="https://www.memphiszoo.org/zoo-map">
+                    <a href="https://albertvaldes.netlify.app/">
                       <FontAwesomeIcon icon={faLocationDot} />
                       Zoo Map
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.memphiszoo.org/parking">
+                    <a href="https://albertvaldes.netlify.app/">
                       <FontAwesomeIcon icon={faSquareParking} />
                       Parking
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.memphiszoo.org/help-rules">
+                    <a href="https://albertvaldes.netlify.app/">
                       <FontAwesomeIcon icon={faCircleQuestion} />
                       Rules & FAQ
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.memphiszoo.org/daily-schedule">
+                    <a href="https://albertvaldes.netlify.app/">
                       <FontAwesomeIcon icon={faCalendar} />
                       Today at the Zoo
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.memphiszoo.org/dining">
+                    <a href="https://albertvaldes.netlify.app/">
                       <FontAwesomeIcon icon={faUtensils} />
                       Dining
                     </a>
@@ -219,7 +219,7 @@ function MenuModal() {
                   </tr>
                 </tbody>
               </table>
-              <a href="https://www.memphiszoo.org/zoo-lights" className="learn-more__animated">
+              <a href="https://albertvaldes.netlify.app/" className="learn-more__animated">
                 {' '}
                 Learn More <FontAwesomeIcon icon={faArrowRightLong} />
               </a>
@@ -277,7 +277,7 @@ function MenuModal() {
             <a href="#">Go Green</a>
           </li>
           <li className="general-link">
-            <a href="#">Memphis Aazk</a>
+            <a href="#">Zoo Aazk</a>
           </li>
           <li className="general-link">
             <a href="#">Master Gardener Corner</a>
@@ -348,7 +348,7 @@ function MenuModal() {
         </ul>
       </nav>
     </div>
-  )
+  );
 }
 
-export default MenuModal
+export default MenuModal;

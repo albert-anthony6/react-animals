@@ -21,10 +21,15 @@
     width: 100%;
     height: 100%;
     background-color: $navy;
-    background-image: url('/src/assets/images/memzoo.jpg');
+    background-image: url('/src/assets/images/zoo.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
+
+    @include bp-xxl-desktop-large {
+      background-position: 0 50px;
+    }
   }
 
   &--photos {
@@ -317,23 +322,17 @@
 
     a {
       width: 50px;
+      height: 50px;
       margin: 0 10px;
 
       @include bp-sm-phone-landscape {
         margin: 0 20px;
       }
 
-      &:nth-child(1) {
-        width: 156px;
-      }
-
-      &:nth-child(4) {
-        width: 66px;
-      }
-
-      img {
+      svg {
         width: 100%;
         height: 100%;
+        fill: $lightest-neutral;
       }
     }
   }

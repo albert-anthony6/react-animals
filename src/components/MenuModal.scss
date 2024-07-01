@@ -246,8 +246,8 @@
           left: 0;
           width: inherit;
           height: inherit;
-          background-image: url('../assets/images/noise.png');
-          background-size: 390px 390px;
+          background-image: url('../assets/images/noise.jpg');
+          background-size: cover;
           background-position: center;
           background-repeat: repeat;
           z-index: -1;
@@ -348,7 +348,7 @@
           right: 0;
           width: inherit;
           height: inherit;
-          background-image: url('../assets/images/memzoo.jpg');
+          background-image: url('../assets/images/zoo.jpg');
           background-position: center;
           background-repeat: no-repeat;
           z-index: -1;

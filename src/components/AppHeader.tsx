@@ -1,13 +1,13 @@
-import './AppHeader.scss'
-import { Link } from 'react-router-dom'
-import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import './AppHeader.scss';
+import { Link } from 'react-router-dom';
+import IconZooLogo from '../assets/icons/icon_zoo_logo.svg?react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
-  activeModal: boolean
-  setActiveModal: React.Dispatch<React.SetStateAction<boolean>>
-}
+  activeModal: boolean;
+  setActiveModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 function AppHeader({ activeModal, setActiveModal }: Props) {
   return (
@@ -48,7 +48,7 @@ function AppHeader({ activeModal, setActiveModal }: Props) {
                 </ul>
               </li>
               <li>Go Green</li>
-              <li>Memphis Aazk</li>
+              <li>Zoo Aazk</li>
               <li>Master Garden Corner</li>
               <li>Conservation Six</li>
             </ul>
@@ -93,7 +93,7 @@ function AppHeader({ activeModal, setActiveModal }: Props) {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
 
-export default AppHeader
+export default AppHeader;

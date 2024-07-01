@@ -1,19 +1,19 @@
-import './HomeView.scss'
-import { useRef, useState, useEffect } from 'react'
-import HeroVideo from '../assets/videos/hero_bg.mp4'
-import IconScrollIndicator from '../assets/icons/icon_scroll_indicator.svg?react'
-import IconConservation from '../assets/icons/icon_conservation.svg?react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './HomeView.scss';
+import { useRef, useState, useEffect } from 'react';
+import HeroVideo from '../assets/videos/hero_bg.mp4';
+import IconScrollIndicator from '../assets/icons/icon_scroll_indicator.svg?react';
+import IconConservation from '../assets/icons/icon_conservation.svg?react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowDownLong,
   faArrowRightLong,
   faArrowLeftLong
-} from '@fortawesome/free-solid-svg-icons'
-import Carousel, { ButtonGroupProps, StateCallBack } from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
+} from '@fortawesome/free-solid-svg-icons';
+import Carousel, { ButtonGroupProps, StateCallBack } from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonGroupProps) => {
-  const { totalItems, slidesToShow } = carouselState as StateCallBack
+  const { totalItems, slidesToShow } = carouselState as StateCallBack;
 
   return (
     <div className="custom-button-group">
@@ -24,12 +24,14 @@ const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonG
         <FontAwesomeIcon icon={faArrowRightLong} />
       </button>
     </div>
-  )
-}
+  );
+};
 
 function HomeView() {
-  const isLandscapeMode = window.matchMedia('(max-width:999px) and (orientation:landscape)').matches
-  const scrollRef = useRef<HTMLElement>(null)
+  const isLandscapeMode = window.matchMedia(
+    '(max-width:999px) and (orientation:landscape)'
+  ).matches;
+  const scrollRef = useRef<HTMLElement>(null);
   const [hasSectionShown, setHasSectionShown] = useState({
     hero: false,
     experience: false,
@@ -37,7 +39,7 @@ function HomeView() {
     conservation: false,
     initiatives: false,
     'saving-wildlife': false
-  })
+  });
   const slides = [
     {
       name: 'African Veldt',
@@ -51,7 +53,7 @@ function HomeView() {
     },
     {
       name: 'Aquarium',
-      img: 'aquarium.webp',
+      img: 'aquarium.jpg',
       link: ''
     },
     {
@@ -71,12 +73,12 @@ function HomeView() {
     },
     {
       name: 'Herpetarium',
-      img: 'herpetarium.webp',
+      img: 'herpetarium.jpg',
       link: ''
     },
     {
       name: 'Northwest Passage',
-      img: 'northwest_passage.webp',
+      img: 'northwest_passage.jpg',
       link: ''
     },
     {
@@ -86,35 +88,35 @@ function HomeView() {
     },
     {
       name: 'Pelican Pool',
-      img: 'pelican_pool.webp',
+      img: 'pelican_pool.jpg',
       link: ''
     },
     {
       name: 'Penguin Rock',
-      img: 'penguin_rock.webp',
+      img: 'penguin_rock.jpg',
       link: ''
     },
     {
       name: 'Primate Canyon',
-      img: 'primate_canyon.webp',
+      img: 'primate_canyon.jpg',
       link: ''
     },
     {
       name: 'Teton Trek',
-      img: 'teton_trek.webp',
+      img: 'teton_trek.jpg',
       link: ''
     },
     {
       name: 'Tropical Bird House',
-      img: 'tropical_bird_house.webp',
+      img: 'tropical_bird_house.jpg',
       link: ''
     },
     {
       name: 'Zambezi River Hippo Camp',
-      img: 'zambezi_river_hippo_camp.webp',
+      img: 'zambezi_river_hippo_camp.jpg',
       link: ''
     }
-  ]
+  ];
   const responsive = {
     'lg-desktop': {
       breakpoint: { max: 8000, min: 1440 },
@@ -136,33 +138,33 @@ function HomeView() {
       breakpoint: { max: 600, min: 0 },
       items: 2
     }
-  }
+  };
 
   useEffect(() => {
     function handleAnimations() {
-      const sections = scrollRef.current?.querySelectorAll('section')
+      const sections = scrollRef.current?.querySelectorAll('section');
       sections?.forEach((sec: HTMLElement) => {
-        const top = window.scrollY + 500
-        const offset = sec.offsetTop
-        const height = sec.offsetHeight
+        const top = window.scrollY + 500;
+        const offset = sec.offsetTop;
+        const height = sec.offsetHeight;
 
         if (top >= offset && top < offset + height) {
-          const sectionName = sec.className.substring(0, sec.className.indexOf('-section'))
+          const sectionName = sec.className.substring(0, sec.className.indexOf('-section'));
           setHasSectionShown((prevState) => ({
             ...prevState,
             [sectionName]: true
-          }))
+          }));
         }
-      })
+      });
     }
 
     // Invoke on page load
-    handleAnimations()
+    handleAnimations();
 
     window.onscroll = () => {
-      handleAnimations()
-    }
-  }, [])
+      handleAnimations();
+    };
+  }, []);
   return (
     <main ref={scrollRef} className="home-view">
       <section
@@ -205,8 +207,8 @@ function HomeView() {
           <h4 className="green-text">Experience The Wild</h4>
           <h2>Your Passport To Wildlife From Across The Globe</h2>
           <p className="headline">
-            Memphis Zoo is home to 3,500+ animals. Find your favorites and discover new species to
-            love!
+            React Adventures Zoo is home to 3,500+ animals. Find your favorites and discover new
+            species to love!
           </p>
         </div>
         <Carousel
@@ -239,14 +241,14 @@ function HomeView() {
         <h4>Something for Everyone</h4>
         <h2>Find Your Adventure</h2>
         <p className="headline">
-          There's adventure around every corner of the Memphis Zoo for both young and old!
+          There's adventure around every corner of the zoo for both young and old!
         </p>
         <div className="adventures-section__flexed">
           <div className="adventures-section--description">
             <p>
               Watch a butterfly emerge from it's cocoon, experience the magic of a hopping kangaroo,
-              or take part in one of our special events. At Memphis Zoo there's something for
-              everyone to enjoy!
+              or take part in one of our special events. At this zoo there's something for everyone
+              to enjoy!
             </p>
             <a href="#" className="learn-more__animated">
               {' '}
@@ -261,15 +263,15 @@ function HomeView() {
             }
           >
             <div className="link">
-              <img src="/assets/images/admission.webp" alt="Admission." />
+              <img src="/assets/images/admission.jpg" alt="Admission." />
               <h4>Admission</h4>
             </div>
             <div className="link">
-              <img src="/assets/images/seasonal-experiences.webp" alt="Admission." />
+              <img src="/assets/images/seasonal_experiences.jpg" alt="Admission." />
               <h4>Seasonal Experiences</h4>
             </div>
             <div className="link">
-              <img src="/assets/images/special-events.jpg" alt="Admission." />
+              <img src="/assets/images/special_events.jpg" alt="Admission." />
               <h4>Special Events</h4>
             </div>
             <div className="link">
@@ -287,7 +289,7 @@ function HomeView() {
         }
       >
         <div className="conservation-section--text">
-          <h4>Memphis Zoo Conservation</h4>
+          <h4>Zoo Conservation</h4>
           <h2>Secure the Future of a World of Wildlife</h2>
           <p className="headline">
             We aim to improve the security and stability of animal populations - both in the wild
@@ -305,18 +307,18 @@ function HomeView() {
               : 'initiatives-section--photos hide'
           }
         >
-          <img src="/assets/images/kissing_bears.webp" alt="Two Kissing Bears." />
-          <img src="/assets/images/memzoo_snake_holding.webp" alt="Snake being hand held." />
-          <img src="/assets/images/memzoo_penguin.jpg" alt="Penguins Flapping." />
+          <img src="/assets/images/conservation1.jpg" alt="Two Brown Bears." />
+          <img src="/assets/images/conservation2.jpg" alt="Snake being hand held." />
+          <img src="/assets/images/conservation3.jpg" alt="Penguins Flapping." />
         </div>
         <div className="initiatives-section--text">
           <h4>Conservation</h4>
-          <h2>Memphis Zoo Initiatives</h2>
+          <h2>Zoo Initiatives</h2>
           <p>
             Our conservation projects apply the tools and knowledge gained from scientific research
             to solve real-life problems threatening the world's wildlife.
           </p>
-          <a href="https://www.memphiszoo.org/conservation" className="learn-more__animated">
+          <a href="https://albertvaldes.netlify.app/" className="learn-more__animated">
             Discover Our Conservation Efforts <FontAwesomeIcon icon={faArrowRightLong} />
           </a>
         </div>
@@ -329,13 +331,13 @@ function HomeView() {
         }
       >
         <h2>Creating Adventures. Saving Wildlife.</h2>
-        <a href="https://www.memphiszoo.org/plan-your-visit" className="learn-more__animated">
+        <a href="https://albertvaldes.netlify.app/" className="learn-more__animated">
           {' '}
           Plan Your Visit <FontAwesomeIcon icon={faArrowRightLong} />
         </a>
       </section>
     </main>
-  )
+  );
 }
 
-export default HomeView
+export default HomeView;
