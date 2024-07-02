@@ -17,10 +17,20 @@ const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }: ButtonG
 
   return (
     <div className="custom-button-group">
-      <button onClick={() => [goToSlide?.(totalItems - slidesToShow), previous?.()]}>
+      <button
+        onClick={() => {
+          goToSlide?.(totalItems - slidesToShow);
+          previous?.();
+        }}
+      >
         <FontAwesomeIcon icon={faArrowLeftLong} />
       </button>
-      <button onClick={() => [goToSlide?.(0), next?.()]}>
+      <button
+        onClick={() => {
+          goToSlide?.(0);
+          next?.();
+        }}
+      >
         <FontAwesomeIcon icon={faArrowRightLong} />
       </button>
     </div>
@@ -32,6 +42,7 @@ function HomeView() {
     '(max-width:999px) and (orientation:landscape)'
   ).matches;
   const scrollRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [hasSectionShown, setHasSectionShown] = useState({
     hero: false,
     experience: false,
@@ -40,6 +51,7 @@ function HomeView() {
     initiatives: false,
     'saving-wildlife': false
   });
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const slides = [
     {
       name: 'African Veldt',
@@ -158,18 +170,32 @@ function HomeView() {
       });
     }
 
-    // Invoke on page load
-    handleAnimations();
-
-    window.onscroll = () => {
+    function onVideoLoaded() {
+      // Trigger animations after video is loaded
+      setIsVideoLoaded(true);
       handleAnimations();
+    }
+
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      videoElement.addEventListener('loadeddata', onVideoLoaded);
+    }
+
+    window.onscroll = handleAnimations;
+
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener('loadeddata', onVideoLoaded);
+      }
+      // Clean up scroll event listener
+      window.onscroll = null;
     };
   }, []);
   return (
     <main ref={scrollRef} className="home-view">
       <section
         className={
-          hasSectionShown['hero'] || isLandscapeMode
+          (hasSectionShown['hero'] && isVideoLoaded) || isLandscapeMode
             ? 'hero-section show-animation'
             : 'hero-section hide'
         }
@@ -180,7 +206,7 @@ function HomeView() {
             <h1>Wildlife</h1>
           </div>
           <div className="hero-video">
-            <video loop autoPlay muted playsInline>
+            <video ref={videoRef} loop autoPlay muted playsInline>
               <source src={HeroVideo} type="video/mp4" />
               Your browser does not support the video tag. It is recommended to upgrade your
               browser.
